@@ -1,19 +1,22 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./index.css";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import "./index.css"
+//import Bootstrap from "react-bootstrap";
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      name: "",
       email: "",
       password: ""
     };
   }
 
-  validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+  validateForm = event => {
+    return this.state.name.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
   }
 
   handleChange = event => {
@@ -26,36 +29,56 @@ export default class Login extends Component {
     event.preventDefault();
   }
 
+  registerUser = event => {
+    document.getElementById("mostrarRegistro");
+    return;
+  }
+
   render() {
     return (
-      <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-            <FormControl
+      <div className="Register">
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group controlId="name" bsSize="large">
+            <i>Name: </i>
+            <Form.Control
               autoFocus
-              type="email"
+              value={this.state.name}
+              onChange={this.handleChange}
+              type="name"
+            />
+          </Form.Group>
+          <Form.Group controlId="email" bsSize="large">
+            <i>Email:</i>
+            <Form.Control
               value={this.state.email}
               onChange={this.handleChange}
+              type="email"
             />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl
+          </Form.Group>
+          <Form.Group controlId="password" bsSize="large">
+            <i>Password: </i>
+            <Form.Control
               value={this.state.password}
               onChange={this.handleChange}
               type="password"
             />
-          </FormGroup>
+          </Form.Group>
           <Button
             block
             bsSize="large"
             disabled={!this.validateForm()}
-            type="submit"
+            type="Register"
+            onClick={this.registerUser()}
           >
-            Login
+            Register
           </Button>
-        </form>
+        </Form>
+        <p id="mostrarRegistro" >
+        {this.state.name}
+        {this.state.email}
+        {this.state.passwords}
+        </p>
+        
       </div>
     );
   }
