@@ -1,24 +1,6 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
-//import Login from "./containers/Login";
-import { Component } from "react";
+import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./index.css";
-
-//const name= "Diego";
-
-//function App() {
-//  return (
-//    <div className="App">
-//      <h1>Hello {name}</h1>
-//    </div>
-//  );
-//}
-
-// export default App;
-
-
 
 export default class Login extends Component {
   constructor(props) {
