@@ -5,7 +5,7 @@ import "./index.css";
 import "./App.css"
 //import Bootstrap from "react-bootstrap";
 
-export default class Login extends Component {
+export default class Register extends Component {
   constructor(props) {
     super(props);
 
