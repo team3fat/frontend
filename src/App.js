@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "./index.css";
+import "./App.css"
 //import Bootstrap from "react-bootstrap";
 
 export default class Login extends Component {
@@ -17,7 +18,7 @@ export default class Login extends Component {
   }
 
   validateForm = event => {
-    return this.state.name.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.name.length > 0 && this.state.email.length > 0 && this.state.password.length >= 4 && this.state.password.length < 10;
   }
 
   handleChange = event => {
@@ -47,7 +48,6 @@ export default class Login extends Component {
           <Form.Group controlId="surname" bsSize="large">
             <i>Surname: </i>
             <Form.Control
-              autoFocus
               value={this.state.surname}
               onChange={this.handleChange}
               type="surname"
@@ -79,14 +79,17 @@ export default class Login extends Component {
             disabled={!this.validateForm()}
             type="Register"
             onClick={event => {
-              document.getElementById("mostrarRegistro").innerHTML = this.state.name;
-              document.getElementById("")
+              document.getElementById("mostrarRegistro").innerHTML = "Registrado con exito";
+              document.getElementById("password").value = "";
+              document.getElementById("surname").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("name").value = "";
             }}
           >
             Register
           </Button>
         </Form>
-        <p id="mostrarRegistro">
+        <p id="mostrarRegistro" class="mostrarRegistro">
         </p>
         
       </div>

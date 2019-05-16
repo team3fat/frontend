@@ -22,3 +22,8 @@ code {
     max-width: 320px;
   }
 }
+
+.mostrarRegistro {
+  align-self: auto;
+  text-align: center;
+}
