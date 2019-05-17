@@ -9,17 +9,25 @@ class Fetch extends Component {
 
         this.state = {
             hits: [],
+            isLoading: false,
+            error: null,
         };
     }
   
     componentDidMount() {
+
+        this.setState({ isLoading: true });
+
         fetch(API + DEFAULT_QUERY)
         .then(response => response.json())
-        .then(data => this.setState({ hits: data.hits }))
+        .then(data => this.setState({hits: data.hits, isLoading: false}))
+        .catch(error => this.setState({error, isLoading: false}));
     };
 
     render(){
-        return this.state.hits.toString();
+        return (
+            response => response.json()
+        )
     }
 }
 
