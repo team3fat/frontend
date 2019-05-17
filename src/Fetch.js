@@ -26,7 +26,7 @@ class Fetch extends Component {
 
     render(){
         return (
-            response => response.json()
+            this.state.hits.val()
         )
     }
 }
