@@ -24,7 +24,7 @@ class Fetch extends Component {
           <ul>
             {hits.map(hit =>
               <li key={hit.objectID}>
-                <a href={hit.url}>{hit.title}</a>
+                <i id="i">{hit.title}</i>
               </li>
             )}
           </ul>
