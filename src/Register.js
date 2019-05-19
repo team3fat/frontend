@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "./index.css";
-import "./App.css"
-//import Bootstrap from "react-bootstrap";
+import "./App.css";
+import './materialize.css';
 
 export default class Register extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Register extends Component {
 
     this.state = {
       name: "",
-      surname:"",
+      lastname: "",
       email: "",
       password: ""
     };
@@ -33,29 +33,29 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div className="Register">
+      <div class="Container">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="name" bsSize="large">
-            <i>Name: </i>
+            <i>First Name </i>
             <Form.Control
               autoFocus
               value={this.state.name}
               onChange={this.handleChange}
-              type="name"
+              type="email"
               id="name"
             />
           </Form.Group>
-          <Form.Group controlId="surname" bsSize="large">
-            <i>Surname: </i>
+          <Form.Group controlId="email" bsSize="large">
+            <i>Last Name</i>
             <Form.Control
-              value={this.state.surname}
+              value={this.state.lastname}
               onChange={this.handleChange}
-              type="surname"
-              id="surname"
+              type="email"
+              id="lastname"
             />
           </Form.Group>
           <Form.Group controlId="email" bsSize="large">
-            <i>Email:</i>
+            <i>Email</i>
             <Form.Control
               value={this.state.email}
               onChange={this.handleChange}
@@ -64,7 +64,7 @@ export default class Register extends Component {
             />
           </Form.Group>
           <Form.Group controlId="password" bsSize="large">
-            <i>Password: </i>
+            <i>Password </i>
             <Form.Control
               id="password"
               value={this.state.password}
@@ -81,7 +81,7 @@ export default class Register extends Component {
             onClick={event => {
               document.getElementById("mostrarRegistro").innerHTML = "Registrado con exito";
               document.getElementById("password").value = "";
-              document.getElementById("surname").value = "";
+              document.getElementById("lastname").value = "";
               document.getElementById("email").value = "";
               document.getElementById("name").value = "";
             }}
@@ -91,7 +91,7 @@ export default class Register extends Component {
         </Form>
         <p id="mostrarRegistro" class="mostrarRegistro">
         </p>
-        
+
       </div>
     );
   }
