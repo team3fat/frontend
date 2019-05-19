@@ -18,9 +18,9 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <h1 class="card-panel yellow darken-4 ">El Diquecito</h1>
-          <h2 className="subtitle"><Button onClick={event => { }}><NavLink to="/register">Registrate</NavLink></Button> o,
-             si tenes cuenta: <Button onClick={event => { }} ><NavLink to="/register">Ingresa</NavLink></Button>
+          <h1 class="card-panel yellow darken-4 center">El Diquecito</h1>
+          <h2 className="subtitle"><Button onClick={event => {}}><i class="card-panel yellow darken-4">Registrate</i></Button> o,
+             si tenes cuenta: <Button onClick={event => { }} ><i class="card-panel yellow darken-4">Ingresa</i></Button>
           </h2>
           <ul className="header">
             <li className="mainLi"><NavLink to="/reservation">Reservations</NavLink></li>
