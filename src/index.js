@@ -5,13 +5,13 @@ import Register from './Register';
 import * as serviceWorker from './serviceWorker';
 import Login from './Login.js';
 import Fetch from './Fetch.js';
-import Router from './Router.js';
+import Main from './Main.js';
 
-const paginaInicial = <Router />
+const mainPage = <Main />
 const webpage = <Login />;
 const pageFetch = <Fetch />;
 
-ReactDOM.render(pageFetch, document.getElementById('root'));
+ReactDOM.render(mainPage, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

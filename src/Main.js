@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-class Router extends Component{
+class Main extends Component{
     constructor(props){
         super(props);
 
@@ -19,4 +19,4 @@ class Router extends Component{
     }
 }
 
-export default Router;
+export default Main;
