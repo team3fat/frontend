@@ -4,17 +4,9 @@ import './Main.css';
 class Reservations extends Component {
   render() {
     return (
-      <div>
-        <h2 className="titleReserv">STUFF</h2>
-        <p>Mauris sem velit, vehicula eget sodales vitae,
-        rhoncus eget sapien:</p>
-        <ol>
-          <li>Nulla pulvinar diam</li>
-          <li>Facilisis bibendum</li>
-          <li>Vestibulum vulputate</li>
-          <li>Eget erat</li>
-          <li>Id porttitor</li>
-        </ol>
+      <div class="yellow darken-4">
+        <h2 class="center grey-text text-lighten-4 yellow darken-4">Hace tu reserva!</h2>
+        <p class="grey-text text-lighten-4 yellow darken-4">calendario</p>
       </div>
     );
   }

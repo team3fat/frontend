@@ -38,7 +38,7 @@ export default class Login extends Component {
                             id="account"
                             value={this.state.account}
                             onChange={this.handleChange}
-                            type="account"
+                            type="text"
                         />
                     </Form.Group>
                     <Form.Group>

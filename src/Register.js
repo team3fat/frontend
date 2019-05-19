@@ -41,7 +41,7 @@ export default class Register extends Component {
               autoFocus
               value={this.state.name}
               onChange={this.handleChange}
-              type="email"
+              type="text"
               id="name"
             />
           </Form.Group>
@@ -50,7 +50,7 @@ export default class Register extends Component {
             <Form.Control
               value={this.state.lastname}
               onChange={this.handleChange}
-              type="email"
+              type="text"
               id="lastname"
             />
           </Form.Group>
