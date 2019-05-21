@@ -64,7 +64,7 @@ export default class Register extends Component {
             />
           </Form.Group>
           <Form.Group controlId="password" bsSize="large">
-            <i>Password </i>
+            <i>Password <p class="small">(Entre 4 y 8 caracteres)</p> </i>
             <Form.Control
               id="password"
               value={this.state.password}
