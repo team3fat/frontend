@@ -9,6 +9,7 @@ import Reservation from "./Reservation.js";
 import FAQ from "./FAQ.js";
 import Register from './Register';
 import Login from './Login.js';
+import Fetch from './Fetch.js';
 import './Main.css';
 import './materialize.css';
 
@@ -28,10 +29,11 @@ class Main extends Component {
           </ul>
           <div className="content yellow darken-4">
             <Route exact path="/" component={Home} />
-            <Route path="/register" component={Register}></Route>
-            <Route path="/login" component={Login}></Route>
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path="/reservation" component={Reservation} />
             <Route path="/FAQ" component={FAQ} />
+            <Route path="/fetch" component={Fetch} />
           </div>
         </div>
       </HashRouter>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-const API = 'https://hn.algolia.com/api/v1/search?query=';
-const DEFAULT_QUERY = 'redux';
+//const API = 'https://hn.algolia.com/api/v1/search?query=';
+//const DEFAULT_QUERY = 'redux';
 
 class Fetch extends Component {
     constructor(props) {
@@ -14,9 +14,10 @@ class Fetch extends Component {
     }
   
     componentDidMount() {
-        axios.get(API + DEFAULT_QUERY)
+        axios.get('http://127.0.0.1:8000/api/animals')
         .then(result => this.setState({
-          hits: result.data.hits,
+          hits: result.data,
+          
         }))
         .catch(error => this.setState({
           error,
@@ -25,15 +26,8 @@ class Fetch extends Component {
 
     render() {
         const { hits } = this.state;
-    
         return (
-          <ul>
-            {hits.map(hit =>
-              <li key={hit.objectID}>
-                <i id="i">{hit.title}</i>
-              </li>
-            )}
-          </ul>
+          <p>{hits.map(hit => <p>{hit.race}</p>)}</p>
         );
       }
 }
