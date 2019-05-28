@@ -18,9 +18,8 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <h1 class="card-panel yellow darken-4 center">El Diquecito</h1>
-          <h2 className="subtitle"><a href="#/register" class="btn yellow darken-4 large">Registrate</a> o,
-             si tenes cuenta: <a href="#/login" class="btn yellow darken-4">Ingresa</a>
+          <h1 class="card-panel yellow darken-4 center">El Diquecito<a href="#/register" class="btn indigo lighten large right">Registrate</a><a href="#/login" class="btn indigo lighten right">Ingresa</a></h1>
+          <h2 className="subtitle">
           </h2>
           <ul class="header center">
             <li><NavLink to="/reservation">Reservations</NavLink></li>
