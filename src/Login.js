@@ -16,10 +16,6 @@ export default class Login extends Component {
         }
     }
 
-    validateUser = event => {
-        return 1;
-    }
-
     handleChange = event => {
         this.setState({
             [event.target.id]: event.target.value
@@ -49,6 +45,9 @@ export default class Login extends Component {
                             onChange={this.handleChange}
                             type="password"
                         />
+                    </Form.Group>
+                    <Form.Group>
+                        <i>I</i>
                     </Form.Group>
                 </Form>
             </div>
