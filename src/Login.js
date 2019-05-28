@@ -26,30 +26,6 @@ export default class Login extends Component {
         return (
             <div class="Container">
                 <h1>Ingresa con tu cuenta</h1>
-                <Form>
-                    <Form.Group controlId="account" >
-                        <i>Usuario: </i>
-                        <Form.Control
-                            autoFocus
-                            id="account"
-                            value={this.state.account}
-                            onChange={this.handleChange}
-                            type="text"
-                        />
-                    </Form.Group>
-                    <Form.Group>
-                        <i>Password: </i>
-                        <Form.Control
-                            id="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            type="password"
-                        />
-                    </Form.Group>
-                    <Form.Group>
-                        <i>I</i>
-                    </Form.Group>
-                </Form>
             </div>
         )
     }

@@ -8,7 +8,7 @@ class Fetch extends Component {
         super(props);
 
         this.state = {
-            datos: [],
+            hits: [],
             error: null,
         };
     }
@@ -16,7 +16,7 @@ class Fetch extends Component {
     componentDidMount() {
         axios.get('http://127.0.0.1:8000/api/animals')
         .then(result => this.setState({
-          datos: result.data,
+          hits: result.data,
           
         }))
         .catch(error => this.setState({
@@ -25,9 +25,9 @@ class Fetch extends Component {
     }
 
     render() {
-        const { datos } = this.state;
+        const { hits } = this.state;
         return (
-          <p>{datos.map(hit => <p>{hit.race}</p>)}</p>
+          <p>{hits.map(hit => <p>{hit.race}</p>)}</p>
         );
       }
 }
