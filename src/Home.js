@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './Main.css';
+//import { saludar } from './probandoRedux.js';
  
 class Home extends Component {
   render() {

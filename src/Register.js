@@ -32,7 +32,12 @@ export default class Register extends Component {
   render() {
     return (
       <div class="Container">
+      <h1 class="white-text">Registrate en el diquecito</h1>
       <form onSubmit={this.handleSubmit}>
+      <label class="white-text">
+        Nombre:
+        <input type="text" name="name"/>
+      </label>
       <label class="white-text">
         Email:
         <input type="email" name="email" />
@@ -41,7 +46,7 @@ export default class Register extends Component {
         Password:
         <input type="password" name="password"/>
       </label>
-        <input type="submit" value="Submit" class="btn indigo darken-5" />
+        <input type="submit" value="Registrate!" id="btnRegistro" class="btn indigo darken-5" />
       </form>
       </div>
     );
