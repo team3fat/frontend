@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 const API = 'http://127.0.0.1:8000/diquecito/Usuario/';
 //const DEFAULT_QUERY = '';
 
@@ -14,22 +14,15 @@ class Fetch extends Component {
     }
   
     componentDidMount() {
-        axios.get(API)
-        .then(result => {
-          this.setState({
-          hits: result.data,
-          });
-          console.log(result);
-      })
-        .catch(error => this.setState({
-          error,
-        }));
+        fetch(API)
+        .then(response => response.json())
+        .then(data => this.setState({hits: data}))
     }
 
     render() {
         const { hits } = this.state;
         return (
-          <p>{hits}</p>
+          <p>{hits.hits}</p>
         );
       }
 }
