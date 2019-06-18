@@ -11,16 +11,18 @@ export default class Login extends Component {
 
         this.state = {
             account: "",
-            password: ""
+            password: "",
+            token: null,
         }
     }
 
     handleSubmit = event => {
         let inUser = document.getElementById('usuario').innerHTML
         let inPassword = document.getElementById('password').innerHTML
-        if(inUser <= 0 && inPassword <= 0){
-            console.log("Usuario o password vacios");
-        }
+        this.setState({
+            account: inUser,
+            password: inPassword
+        });
     }
 
     handleChange = event => {
@@ -33,11 +35,11 @@ export default class Login extends Component {
         return (
             <div class="Container">
                 <h1 class="white-text">Ingresa con tu cuenta</h1>
-                <form class="white-text" onSubmit={this.handleSubmit}>
+                <form class="white-text" onSubmit={this.handleSubmit} method="get" action="#/mainLogined">
                     Usuario:
-                    <input type="text" name="usuario" id="usuario" />
+                    <input type="text" name="usuario" id="usuario" required/>
                     Contraseña:
-                    <input type="password" name="password" id="password" />
+                    <input type="password" name="password" id="password" required/>
                     <input type="submit" value="Ingresar!" id="btnIngresar" class="btn indigo darken-2" />
                 </form>
             </div>
