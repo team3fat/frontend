@@ -8,12 +8,19 @@ import Home from "./Home.js";
 import Reservation from "./Reservation.js";
 import FAQ from "./FAQ.js";
 import Register from './Register';
-import Login from './Login.js';
-import Fetch from './Fetch.js';
+//import Login from './Login.js';
+import LoginPage from './scenes/LoginPage'
+//import Fetch from './Fetch.js';
+import ShowUsers from './scenes/ShowUsers';
 import './Main.css';
 import './materialize.css';
 
 class Main extends Component {
+
+  componentDidMount(){
+    console.log("Loaded!");
+  }
+  
   render() {
     return (
       <HashRouter>
@@ -29,10 +36,10 @@ class Main extends Component {
           <div className="content yellow darken-4">
             <Route exact path="/" component={Home} />
             <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={LoginPage} />
             <Route path="/reservation" component={Reservation} />
             <Route path="/FAQ" component={FAQ} />
-            <Route path="/fetch" component={Fetch} />
+            <Route path="/fetch" component={ShowUsers} />
           </div>
         </div>
       </HashRouter>

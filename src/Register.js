@@ -9,7 +9,6 @@ export default class Register extends Component {
 
     this.state = {
       name: "",
-      lastname: "",
       email: "",
       password: ""
     };

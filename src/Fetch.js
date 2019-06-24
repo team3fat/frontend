@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
-const API = 'http://127.0.0.1:8000/diquecito/Usuario/';
+const BASE_URL = 'http://127.0.0.1:8000';
 //const DEFAULT_QUERY = '';
 
 class Fetch extends Component {
@@ -8,21 +8,29 @@ class Fetch extends Component {
         super(props);
 
         this.state = {
-            hits: null,
+            first_name: '',
+            email: '',
+            password: '',
             error: null,
         };
     }
+
+    fetchUsers() {
+        fetch(BASE_URL + '/diquecito/usuario/')
+        .then(response => response.json())
+        .then(json => console.log(json))
+    }
   
     componentDidMount() {
-        fetch(API)
-        .then(response => response.json())
-        .then(data => this.setState({hits: data}))
+        this.fetchUsers();
     }
 
     render() {
-        const { hits } = this.state;
+        //const datos = this.state;
         return (
-          <p>{hits.hits}</p>
+          <p>{this.state.map((user) => (
+              <div>{user}</div>
+          ))}</p>
         );
       }
 }

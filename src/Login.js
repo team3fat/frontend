@@ -10,7 +10,7 @@ export default class Login extends Component {
         super(props);
 
         this.state = {
-            account: "",
+            user: "",
             password: "",
             token: null,
         }
@@ -20,7 +20,7 @@ export default class Login extends Component {
         let inUser = document.getElementById('usuario').innerHTML
         let inPassword = document.getElementById('password').innerHTML
         this.setState({
-            account: inUser,
+            user: inUser,
             password: inPassword
         });
     }
@@ -33,14 +33,14 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div class="Container">
-                <h1 class="white-text">Ingresa con tu cuenta</h1>
-                <form class="white-text" onSubmit={this.handleSubmit} method="get" action="#/mainLogined">
+            <div className="Container">
+                <h1 className="white-text">Ingresa con tu cuenta</h1>
+                <form className="white-text" onSubmit={this.handleSubmit} method="get" action="#/mainLogined">
                     Usuario:
                     <input type="text" name="usuario" id="usuario" required/>
                     Contraseña:
                     <input type="password" name="password" id="password" required/>
-                    <input type="submit" value="Ingresar!" id="btnIngresar" class="btn indigo darken-2" />
+                    <input type="submit" value="Ingresar!" id="btnIngresar" className="btn indigo darken-2" />
                 </form>
             </div>
         )
