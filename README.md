@@ -6,7 +6,7 @@
 --------
 git init
 
-git remote add origin https://github.com/team3fat/frontend.git
+git remote add origin [link]
 
 git fetch --all
 
