@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker.js';
+import App from './App.js';
 
+ReactDOM.render(<App/>, document.getElementById('root'));
 
-ReactDOM.render(
-    <div>
-        Hola esto es un div
-    </div>, document.getElementById('root'));
+serviceWorker.unregister();
