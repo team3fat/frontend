@@ -1,5 +1,4 @@
 import React from 'react';
-import {GoogleLogin, GoogleLogout, FontAwesome} from 'react-google-login';
 
 function App(){
 
@@ -9,7 +8,7 @@ function App(){
 
     return (
             <div>
-                
+                <t>Hola</t>
             </div>
     )
 };
