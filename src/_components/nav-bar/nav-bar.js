@@ -15,6 +15,7 @@ class NavBar extends React.Component {
     getNavLinkProps(specificProp){
         var props = {
             inicio: {
+                exact: true,
                 to: '/'
             },
             Informacion: {
@@ -23,9 +24,9 @@ class NavBar extends React.Component {
             reservas: {
                 to: '/reservas'
             }
-        }
+        };
 
-        return props[specificProp]
+        return props[specificProp];
     }
 }
 

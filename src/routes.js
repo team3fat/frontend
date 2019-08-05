@@ -6,9 +6,9 @@ import { Route, Switch } from 'react-router-dom';
 
 const AppRoutes = () => (
     <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/info" component={Informacion}/>
-        <Route exact path="/reserv" component={Reservas}/>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/info" component={Informacion} />
+        <Route exact path="/reserv" component={Reservas} />
     </Switch>
 );
 
