@@ -1,13 +1,13 @@
 import {React, Component} from 'react';
 import { NavLink } from 'react-router-dom';
 
-class NavBar extends Component {
+class NavBar extends React.Component {
     render() {
         return (
             <nav>
-                <NavLink >Inicio</NavLink>
-                <NavLink >Informacion</NavLink>
-                <NavLink >Reservas</NavLink>
+                <NavLink {...this.getNavLinkProps('inicio')}>Inicio</NavLink>
+                <NavLink {...this.getNavLinkProps('info')}>Informacion</NavLink>
+                <NavLink {...this.getNavLinkProps('reservas')}>Reservas</NavLink>
             </nav>
         
         )
@@ -16,6 +16,7 @@ class NavBar extends Component {
     getNavLinkProps(specificProp){
         var props = {
             inicio: {
+                exact: true,
                 to: '/'
             },
             Informacion: {
@@ -24,9 +25,9 @@ class NavBar extends Component {
             reservas: {
                 to: '/reservas'
             }
-        }
+        };
 
-        return props[specificProp]
+        return props[specificProp];
     }
 }
 
