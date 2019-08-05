@@ -1,4 +1,4 @@
-import {React, Component} from 'react';
+import {React} from 'react';
 import { NavLink } from 'react-router-dom';
 
 class NavBar extends React.Component {
@@ -6,7 +6,7 @@ class NavBar extends React.Component {
         return (
             <nav>
                 <NavLink {...this.getNavLinkProps('inicio')}>Inicio</NavLink>
-                <NavLink {...this.getNavLinkProps('info')}>Informacion</NavLink>
+                <NavLink {...this.getNavLinkProps('informacion')}>Informacion</NavLink>
                 <NavLink {...this.getNavLinkProps('reservas')}>Reservas</NavLink>
             </nav>
         
@@ -19,7 +19,7 @@ class NavBar extends React.Component {
                 exact: true,
                 to: '/'
             },
-            Informacion: {
+            informacion: {
                 to: '/info'
             },
             reservas: {

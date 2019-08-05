@@ -1,15 +1,15 @@
 import React from 'react';
 //import "materialize-css/dist/css/materialize.min.css";
-import NavBar from './_components/nav-bar/nav-bar';
-import AppRoutes from './routes';
+//import NavBar from './_components/nav-bar/nav-bar.js';
+import AppRoutes from './routes.js';
 
 function App(){
     return (
             <div>
-                <NavBar />
+                <a>Hola</a>
                 <AppRoutes />
             </div>
     )
 };
 
-export default App
+export default App;
