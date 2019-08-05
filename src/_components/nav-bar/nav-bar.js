@@ -10,7 +10,7 @@ class NavBar extends React.Component {
                 <NavLink {...this.getNavLinkProps('reservas')}>Reservas</NavLink>
             </nav>
         
-        )
+        );
     }
 
     getNavLinkProps(specificProp){
