@@ -1,9 +1,11 @@
 # frontend
 "El Diquecito" frontend repository
-
+--------
+#Instalacion del proyecto
+Lo primero que hay que hacer es descargar el repositorio de git con los siguientes pasos:
 --------
 #Git
---------
+##crear una carpeta donde se instalara el proyecto
 ```sh
 $ git init
 ```
@@ -26,6 +28,17 @@ $ git branch
 $ git checkout develop
 ```
 
+--------
+Despues instalar las siguientes tecnologias desde la terminal
+```sh
+$ Sudo apt install npm
+```
+dentro de la carpeta del proyecto usar
+```sh
+npm install
+```
+
+--------
 # Stack
 
 
