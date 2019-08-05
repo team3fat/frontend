@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, Component} from 'react';
 import { NavLink } from 'react-router-dom';
 
 class NavBar extends Component {
@@ -9,6 +9,7 @@ class NavBar extends Component {
                 <NavLink >Informacion</NavLink>
                 <NavLink >Reservas</NavLink>
             </nav>
+        
         )
     }
 
