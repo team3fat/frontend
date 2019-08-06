@@ -1,5 +1,4 @@
 import React from 'react';
-//import "materialize-css/dist/css/materialize.min.css";
 import { BrowserRouter } from 'react-router-dom';
 import NavBar from './_components/nav-bar/nav-bar.js';
 import AppRoutes from './routes.js';
