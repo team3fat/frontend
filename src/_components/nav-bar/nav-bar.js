@@ -15,11 +15,11 @@ class NavBar extends React.Component {
                     <NavLink {...this.getNavLinkProps('reservas')}>Reservas</NavLink>
                 </div>
             </nav>
-        
+
         );
     }
 
-    getNavLinkProps(specificProp){
+    getNavLinkProps(specificProp) {
         var props = {
             inicio: {
                 exact: true,
