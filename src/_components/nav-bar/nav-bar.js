@@ -5,9 +5,15 @@ class NavBar extends React.Component {
     render() {
         return (
             <nav>
-                <NavLink {...this.getNavLinkProps('inicio')}>Inicio</NavLink>
-                <NavLink {...this.getNavLinkProps('informacion')}>Informacion</NavLink>
-                <NavLink {...this.getNavLinkProps('reservas')}>Reservas</NavLink>
+                <div>
+                    <NavLink {...this.getNavLinkProps('inicio')}>Inicio</NavLink>
+                </div>
+                <div>
+                    <NavLink {...this.getNavLinkProps('informacion')}>Informacion</NavLink>
+                </div>
+                <div>
+                    <NavLink {...this.getNavLinkProps('reservas')}>Reservas</NavLink>
+                </div>
             </nav>
         
         );
@@ -20,9 +26,11 @@ class NavBar extends React.Component {
                 to: '/'
             },
             informacion: {
+                exact: true,
                 to: '/info'
             },
             reservas: {
+                exact: true,
                 to: '/reservas'
             }
         };
