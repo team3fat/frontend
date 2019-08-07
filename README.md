@@ -10,7 +10,7 @@ Lo primero que hay que hacer es descargar el repositorio de git con los siguient
 $ git init
 ```
 ```sh
-$ git remote add origin [link]
+$ git remote add origin https://github.com/team3fat/frontend.git
 ```
 ```sh
 $ git fetch --all
