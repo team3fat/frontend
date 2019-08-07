@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 
 export default class Reservas extends Component {
-    
+
     constructor(props){
         super(props);
         this.state={
@@ -13,12 +13,12 @@ export default class Reservas extends Component {
     componentDidMount(){
         fetch("https://randomuser.me/api/")
          .then(response => response.json())
-         .then(json => console.log(json.results[0].name)) //console.log(json.results[0].gender)
+         .then(json => this.setState({gender: json.results[0].name.first})) //console.log(json.results[0].gender)
     }
     render() {
         return (
             <div>
-                <a>{this.props.gender}</a>
+                <a>Bienvenido/a {this.state.gender}</a>
                 <Calendar
                     minDate={new Date()}
                 />
