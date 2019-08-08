@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
-
+import style from '../../_assets/css/font.css';
 
 class NavBar extends React.Component {
     render() {
@@ -12,10 +12,15 @@ class NavBar extends React.Component {
                 <div>
                     <Grid container spacing={1} direction="column" alignItems="center">
                         <Grid item>
-                            <ButtonGroup size="small" aria-label="small outlined button group">
-                                <NavLink {...this.getNavLinkProps('inicio')}><Button>Inicio</Button></NavLink>
-                                <NavLink {...this.getNavLinkProps('informacion')}><Button>Informacion</Button></NavLink>
-                                <NavLink {...this.getNavLinkProps('reservas')}><Button>Reservas</Button></NavLink>
+                            <ButtonGroup size="small" aria-label="small outlined button group" >
+                                <NavLink {...this.getNavLinkProps('inicio')}><Button size="small" variant="outlined">
+                                    Inicio
+                                    </Button></NavLink>
+                                <NavLink {...this.getNavLinkProps('informacion')}><Button size="small" variant="outlined"
+                                className={style.separarboton}>Informacion
+                                </Button></NavLink>
+                                <NavLink {...this.getNavLinkProps('reservas')}><Button size="small" variant="outlined">
+                                    Reservas</Button></NavLink>
                             </ButtonGroup>
                         </Grid>
                     </Grid>
