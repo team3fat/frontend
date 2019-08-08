@@ -2,6 +2,29 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'; 
 
 class NavBar extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            diaShow: false
+        }
+    }
+
+    diaChanged() {
+        this.setState({
+            diaShow: true
+        })
+        
+    }
+
+    componentWillMount() {
+       // window.addEventListener('DiaChanged', this.diaChanged.bind(this))
+    };
+
+    componentWillUnmount() {
+        //window.removeEventListener('DiaChanged')
+    }
+
     render() {
         return (
             <nav>
@@ -14,6 +37,7 @@ class NavBar extends React.Component {
                 <div>
                     <NavLink {...this.getNavLinkProps('reservas')}>Reservas</NavLink>
                 </div>
+                { this.state.diaShow ? "dia" : null}
             </nav>
 
         );
