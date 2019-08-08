@@ -6,6 +6,29 @@ import Grid from '@material-ui/core/Grid';
 import style from '../../_assets/css/font.css';
 
 class NavBar extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            diaShow: false
+        }
+    }
+
+    diaChanged() {
+        this.setState({
+            diaShow: true
+        })
+        
+    }
+
+    componentWillMount() {
+       // window.addEventListener('DiaChanged', this.diaChanged.bind(this))
+    };
+
+    componentWillUnmount() {
+        //window.removeEventListener('DiaChanged')
+    }
+
     render() {
         return (
             <nav>
@@ -25,7 +48,7 @@ class NavBar extends React.Component {
                         </Grid>
                     </Grid>
                 </div>
-
+                { this.state.diaShow ? "dia" : null}
             </nav>
 
         );

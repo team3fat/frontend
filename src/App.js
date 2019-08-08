@@ -30,8 +30,8 @@ function App() {
                     <Typography variant="h6" className={classes.title}>
                         Campamento Diquecito
                     </Typography>
-                    <Button color="inherit">Registrate</Button>
-                    <Button color="inherit">Iniciar Sesion</Button>
+                    <Button color="inherit" href="/registro">Registrate</Button>
+                    <Button color="inherit" href="/ingreso">Iniciar Sesion</Button>
                 </Toolbar>
             </AppBar>
             <BrowserRouter>
