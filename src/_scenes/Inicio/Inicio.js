@@ -3,7 +3,7 @@ import React from 'react';
 function ButtonAppBar() {
   return (
     <div>
-      <a>Esto es el Home</a>
+      <a>Esto es el Inicio</a>
     </div>
   );
 }
