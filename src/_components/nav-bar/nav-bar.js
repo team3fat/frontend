@@ -33,7 +33,7 @@ class NavBar extends React.Component {
         return (
             <nav>
                 <div>
-                    <Grid container spacing={1} direction="column" alignItems="center">
+                    <Grid container direction="column" justify="space-between" alignItems="center">
                         <Grid item>
                             <ButtonGroup size="small" aria-label="small outlined button group" >
                                 <NavLink {...this.getNavLinkProps('inicio')}><Button size="small" variant="outlined">
