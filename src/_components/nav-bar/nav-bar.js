@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
-
+import '../../_assets/css/font.css';
 
 class NavBar extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             diaShow: false
@@ -18,11 +18,11 @@ class NavBar extends React.Component {
         this.setState({
             diaShow: true
         })
-        
+
     }
 
     componentWillMount() {
-       // window.addEventListener('DiaChanged', this.diaChanged.bind(this))
+        // window.addEventListener('DiaChanged', this.diaChanged.bind(this))
     };
 
     componentWillUnmount() {
@@ -33,17 +33,28 @@ class NavBar extends React.Component {
         return (
             <nav>
                 <div>
-                    <Grid container spacing={1} direction="column" alignItems="center">
+                    <Grid container direction="column" alignItems="center">
                         <Grid item>
-                            <ButtonGroup size="small" aria-label="small outlined button group">
-                                <NavLink {...this.getNavLinkProps('inicio')}><Button>Inicio</Button></NavLink>
-                                <NavLink {...this.getNavLinkProps('informacion')}><Button>Informacion</Button></NavLink>
-                                <NavLink {...this.getNavLinkProps('reservas')}><Button>Reservas</Button></NavLink>
+                            <ButtonGroup size="small" aria-label="small outlined button group" >
+                                <div className="separarboton">
+                                    <NavLink {...this.getNavLinkProps('inicio')}><Button size="small" variant="outlined" >
+                                        Inicio
+                                    </Button></NavLink>
+                                </div>
+                                <div className="separarboton">
+                                    <NavLink {...this.getNavLinkProps('informacion')}><Button size="small" variant="outlined"
+                                        className="separarboton">Informacion
+                                    </Button></NavLink>
+                                </div>
+                                <div className="separarboton">
+                                    <NavLink {...this.getNavLinkProps('reservas')}><Button size="small" variant="outlined">
+                                        Reservas</Button></NavLink>
+                                </div>
                             </ButtonGroup>
                         </Grid>
                     </Grid>
                 </div>
-                { this.state.diaShow ? "dia" : null}
+                {this.state.diaShow ? "dia" : null}
             </nav>
 
         );
