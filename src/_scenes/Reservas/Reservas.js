@@ -20,9 +20,12 @@ export default class Reservas extends Component {
     }
     
     componentWillMount(){
+        
         fetch("https://randomuser.me/api/")
          .then(response => response.json())
          .then(json => this.setState({name: json.results[0].name.first})) //console.log(json.results[0].name)
+        
+        
     }
     render() {
         return (
