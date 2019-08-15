@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
 //import Pepe from './pepe.js';
 
 export default class Reservas extends Component {
@@ -8,25 +10,28 @@ export default class Reservas extends Component {
         super(props);
         this.state={
             name: null,
-            dia: null,
-        };
+            diaInicio: null,
+            diaFin: null,
+            descripcion: null,
+            diasTotales: [],
+        };    
     }
+
+    
 
     selectDia(event){
         console.log(event.getDate());
-        this.setState({dia: event.getDate()})
-        var diaChangedEvent = new Event('DiaChanged');
-        window.dispatchEvent(diaChangedEvent)
+        this.setState({});
+        console.log("Pepe")
     }
     
     componentWillMount(){
-        
         fetch("https://randomuser.me/api/")
          .then(response => response.json())
-         .then(json => this.setState({name: json.results[0].name.first})) //console.log(json.results[0].name)
-        
+         .then(json => this.setState({name: json.results[0].name.first})) //console.log(json.results[0].name)        
         
     }
+
     render() {
         return (
             <div>
@@ -36,6 +41,10 @@ export default class Reservas extends Component {
                     minDate={new Date()}
                     onClickDay={this.selectDia.bind(this)}
                 />
+                <FormControl>
+                    <Input id="diaInicio" placeholder="Desde"></Input>
+                    <Input id="diaFin" placeholder="Hasta"></Input>
+                </FormControl>
             </div>
         )
     }
