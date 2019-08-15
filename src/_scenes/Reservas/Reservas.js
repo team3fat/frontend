@@ -22,7 +22,7 @@ export default class Reservas extends Component {
     selectDia(event){
         console.log(event.getDate());
         this.setState({});
-        console.log(diasTotales)
+        console.log("Pepe")
     }
     
     componentWillMount(){
