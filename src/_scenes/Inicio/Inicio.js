@@ -2,22 +2,21 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
-import GridList from '@material-ui/core/GridList';
+import { makeStyles } from '@material-ui/core/styles';
 import '../../_assets/css/font.css';
 
 function ButtonAppBar() {
   return (
     <div>
-      <GridList>
+      <Grid container spacing={0}>
         <Grid container direction="row" alignContent="center">
-          <table>
             <Grid item>
               <tr>
                 <td className="imgpequeña">
-                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="images"
-                    class="svg-inline--fa fa-images fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 576 512"><path fill="currentColor" d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v48H54a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6v-10h48zm42-336H150a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6V86a6 6 0 0 0-6-6zm6-48c26.51 0 48 21.49 48 48v256c0 26.51-21.49 48-48 48H144c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h384zM264 144c0 22.091-17.909 40-40 40s-40-17.909-40-40 17.909-40 40-40 40 17.909 40 40zm-72 96l39.515-39.515c4.686-4.686 12.284-4.686 16.971 0L288 240l103.515-103.515c4.686-4.686 12.284-4.686 16.971 0L480 208v80H192v-48z"></path>
-                  </svg>
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="images" 
+                  class="svg-inline--fa fa-images fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 576 512"><path fill="currentColor" d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v48H54a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6v-10h48zm42-336H150a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6V86a6 6 0 0 0-6-6zm6-48c26.51 0 48 21.49 48 48v256c0 26.51-21.49 48-48 48H144c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h384zM264 144c0 22.091-17.909 40-40 40s-40-17.909-40-40 17.909-40 40-40 40 17.909 40 40zm-72 96l39.515-39.515c4.686-4.686 12.284-4.686 16.971 0L288 240l103.515-103.515c4.686-4.686 12.284-4.686 16.971 0L480 208v80H192v-48z"></path>
+                  </svg>  
                 </td>
                 <td className="imgpequeña">
                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
@@ -33,14 +32,14 @@ function ButtonAppBar() {
                 </td>
               </tr>
               <ButtonGroup container color="primary" size="medium" variant="contained">
+                
                 <Button>Fotos</Button>
                 <Button>Historia</Button>
                 <Button>Caracteristicas</Button>
               </ButtonGroup>
             </Grid>
-          </table>
         </Grid>
-      </GridList>
+        </Grid>
     </div>
   );
 }
