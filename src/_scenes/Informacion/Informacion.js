@@ -5,6 +5,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -35,16 +37,16 @@ export default function ComplexGrid() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complejo" src="/_assets/Img/Map.jpg"/>
+            <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/map.jpg")}/>
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
+            <Grid item xs container direction={"column"} spacing={2}>
               <Grid item xs>
-                <Typography gutterBottom variant="subtitle1">
+                <Typography gutterBottom variant={"subtitle1"}>
                   Complejo Diquecito
                 </Typography>
-                <Typography variant="body2" gutterBottom>
+                <Typography variant={"body2"} gutterBottom>
                 <a href="https://www.google.com/maps/place/Nuevo+Complejo+Diquecito+(campamento+evangelico)/@-31.3589483,-64.3826017,149a,35y,181.59h,44.73t/data=!3m1!1e3!4m5!3m4!1s0x9432a2891aac0737:0x55e26374f614987c!8m2!3d-31.3606491!4d-64.3822378?hl=es">Google Maps</a>
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
