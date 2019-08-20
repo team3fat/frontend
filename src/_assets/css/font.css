@@ -1,6 +1,15 @@
 .separarboton{
     margin: 10px;
 }
+.imgpequeña{
+    width: 50px; height: 50px;
+    }
+
 .colortext{
     color: white;
 }
+.centrado{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }

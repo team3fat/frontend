@@ -33,7 +33,7 @@ class NavBar extends React.Component {
         return (
             <nav>
                 <div>
-                    <Grid container direction="column" alignItems="center">
+                    <Grid container direction="column" justify="space-between" alignItems="center">
                         <Grid item>
                             <ButtonGroup size="small" aria-label="small outlined button group" >
                                 <div className="separarboton">
