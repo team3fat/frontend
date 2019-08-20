@@ -1,8 +1,8 @@
-import React from 'react';
+import '../../_assets/css/font.css';
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import '../../_assets/css/font.css';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 
@@ -29,9 +29,7 @@ export default function AutoGrid() {
       <Grid wrap="nowrap" container spacing={1}>
         <Grid item xs={7}>
           <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >El Diquecito Grupo 3</h5>
-          <Typography className="colortext">{message}</Typography>
-                  
-                  
+          <Typography className="colortext">{message}</Typography>    
         </Grid>
         <Grid item xs={5}>
           <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6">Links</h5>

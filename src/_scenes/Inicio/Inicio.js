@@ -6,19 +6,19 @@ import GridList from '@material-ui/core/GridList';
 
 function ButtonAppBar() {
   return (
-    <div>
-      <GridList>
-        <Grid container alignContent="center" direction="row">
-          <Grid item>
-            <ButtonGroup container color="primary" size="medium" variant="contained">
-              <Button>Inicio</Button>
-              <Button>Informacion</Button>
-              <Button>Reservas</Button>
-            </ButtonGroup>
+      <div>
+        <GridList>
+          <Grid container alignContent="center" direction="row">
+            <Grid item>
+              <ButtonGroup container color="primary" size="medium" variant="contained">
+                <Button>Inicio</Button>
+                <Button>Informacion</Button>
+                <Button>Reservas</Button>
+              </ButtonGroup>
+            </Grid>
           </Grid>
-        </Grid>
-      </GridList>
-    </div>
+        </GridList>
+      </div>
   );
 }
 
