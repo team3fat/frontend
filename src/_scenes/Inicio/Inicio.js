@@ -5,12 +5,13 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
 import '../../_assets/css/font.css';
 
-const messageC = `Caracteristicas`;
-
 const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
+    padding: theme.spacing(1),
+    textAlign: 'center',
   },
+
   input: {
     display: 'none',
   },
@@ -36,7 +37,7 @@ export default function ButtonAppBar() {
             direction="row"
             justify="center"
             alignItems="center">
-            <Button variant="contained" color="primary" className={classes.button}>
+            <Button variant="contained" color="primary" className= "btncentrado">
               Fotos
       </Button>
           </Grid>
@@ -50,7 +51,7 @@ export default function ButtonAppBar() {
             direction="row"
             justify="center"
             alignItems="center">
-            <Button variant="contained" color="primary" className={classes.button}>
+            <Button variant="contained" color="primary" className= "btncentrado">
               Historia
       </Button>
           </Grid>
@@ -64,7 +65,7 @@ export default function ButtonAppBar() {
             direction="row"
             justify="center"
             alignItems="center">
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" className= "btncentrado">
             Caracteristicas
       </Button>
           </Grid>
