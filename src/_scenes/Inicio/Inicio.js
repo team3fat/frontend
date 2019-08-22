@@ -6,8 +6,7 @@ import '../../_assets/css/font.css';
 
 const useStyles = makeStyles(theme => ({
   button: {
-    margin: theme.spacing(1),
-    padding: theme.spacing(0),
+    marginBottom: theme.spacing(1),
   },
 
   input: {
@@ -21,13 +20,26 @@ export default function ButtonAppBar() {
   return (
     <div>
       <Grid container
-      className={classes.button}
+        className={classes.button}
         direction="row"
-        justify="center"
+        justify="space-between"
         alignItems="center">
 
         <Grid item xs={4}>
-          <div className="imgpequeña">
+          <div className="separarbotones imgpequeña">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
+              class="svg-inline--fa fa-scroll fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"></path>
+            </svg>
+            <Grid>
+              <Button variant="contained" color="primary">
+                Fotos
+              </Button>
+            </Grid>
+            </div>
+        </Grid>
+        <Grid item xs={4}>
+          <div className="separarbotones imgpequeña">
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
               class="svg-inline--fa fa-scroll fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"></path>
@@ -35,33 +47,20 @@ export default function ButtonAppBar() {
             <Grid>
               <Button variant="contained" color="primary">
                 Historia
-      </Button>
+              </Button>
             </Grid>
           </div>
         </Grid>
         <Grid item xs={4}>
-          <div className="imgpequeña">
+          <div className="separarbotones imgpequeña">
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
               class="svg-inline--fa fa-scroll fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"></path>
             </svg>
             <Grid>
               <Button variant="contained" color="primary">
-                Historia
-      </Button>
-            </Grid>
-          </div>
-        </Grid>
-        <Grid item xs={4}>
-          <div className="imgpequeña">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
-              class="svg-inline--fa fa-scroll fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"></path>
-            </svg>
-            <Grid>
-              <Button variant="contained" color="primary">
-                Historia
-      </Button>
+                Caracteristicas
+              </Button>
             </Grid>
           </div>
         </Grid>
