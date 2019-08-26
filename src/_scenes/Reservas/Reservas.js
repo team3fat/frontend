@@ -1,35 +1,18 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
-//import Pepe from './pepe.js';
+import DateRangePicker from '@wojtekmaj/react-daterange-picker';
 
 export default class Reservas extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             name: null,
-            diaInicio: null,
-            diaFin: null,
             descripcion: null,
-            diasTotales: [],
-        };    
-    }
-
-    
-
-    selectDia(event){
-        console.log(event.getDate());
-        this.setState({});
-        console.log("Pepe")
-    }
-    
-    componentWillMount(){
-        fetch("https://randomuser.me/api/")
-         .then(response => response.json())
-         .then(json => this.setState({name: json.results[0].name.first})) //console.log(json.results[0].name)        
-        
+            estado: null,
+            diasTotales: [new Date(), new Date()],
+        };
     }
 
     render() {
@@ -37,21 +20,42 @@ export default class Reservas extends Component {
             <div>
                 <a>Bienvenido/a {this.state.name}</a>
                 <p>{this.state.dia}</p>
-                <Calendar
-                    minDate={new Date()}
-                    onClickDay={this.selectDia.bind(this)}
-                />
-                <FormControl>
-                    <Input id="diaInicio" placeholder="Desde"></Input>
-                    <Input id="diaFin" placeholder="Hasta"></Input>
-                </FormControl>
+                {this.renderCalendar()}
+                {this.renderFormControl()}
             </div>
-        )
+        );
     }
 
-    pepeCallback() {
-        this.setState({
-            text: "holi"
-        })
+    renderCalendar() {
+        return (
+            <div>
+                <DateRangePicker
+                    minDate={new Date()}
+                    onChange={this.onChange}
+                    value={this.state.diasTotales}
+                    format="dd-MM-y"
+                />
+            </div>
+        );
+    }
+
+    renderFormControl() {
+        return (
+            <FormControl>
+                <h4>Desde</h4>
+                <Input id="diaInicio" placeholder="Desde"></Input>
+                <h4>Hasta</h4>
+                <Input id="diaFin" placeholder="Hasta"></Input>
+            </FormControl>
+        );
+    }
+
+    onChange = date => this.setState({ date })
+
+    componentWillMount() {
+        fetch("https://randomuser.me/api/")
+            .then(response => response.json())
+            .then(json => this.setState({ name: json.results[0].name.first })) //console.log(json.results[0].name)        
+
     }
 }

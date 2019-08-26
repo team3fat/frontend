@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import '../../_assets/css/font.css';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -11,60 +12,57 @@ const useStyles = makeStyles(theme => ({
 
   input: {
     display: 'none',
-  },
+  },  
 }));
-
+  
 export default function ButtonAppBar() {
-  const classes = useStyles();
+  const classes = useStyles()
+    return (
+      <div>
+        <Paper>
+        <Grid container
+          className={classes.button}
+          direction="row"
+          justify="space-between"
+          alignItems="center">
 
-  return (
-    <div>
-      <Grid container
-        className={classes.button}
-        direction="row"
-        justify="space-between"
-        alignItems="center">
 
-        <Grid item xs={4}>
-          <div className="separarbotones imgpequeña">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
-              class="svg-inline--fa fa-scroll fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"></path>
-            </svg>
-            <Grid>
-              <Button variant="contained" color="primary">
-                Fotos
-              </Button>
-            </Grid>
+
+          <Grid item xs={4}>
+            <div className="separarbotones">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" /><path d="M0 0h24v24H0z" fill="none" /></svg>
+              <Grid>
+                <Button variant="contained" color="primary">
+                  Fotos
+                </Button>
+              </Grid>
             </div>
+          </Grid>
+
+          <Grid item xs={4}>
+            <div className="separarbotones">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" /></svg>
+              <Grid>
+                <Button variant="contained" color="primary">
+                  Historia
+                </Button>
+              </Grid>
+            </div>
+          </Grid>
+
+          <Grid item xs={4}>
+            <div className="separarbotones">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M3 9h4V5H5c-1.1 0-2 .9-2 2v2zm0 5h4v-4H3v4zm5 0h4v-4H8v4zm5 0h4v-4h-4v4zM8 9h4V5H8v4zm5-4v4h4V5h-4zm5 9h4v-4h-4v4zM5 19h2v-4H3v2c0 1.1.9 2 2 2zm3 0h4v-4H8v4zm5 0h4v-4h-4v4zm5 0h2c1.1 0 2-.9 2-2v-2h-4v4zm0-14v4h4V7c0-1.1-.9-2-2-2h-2z" /></svg>
+              <Grid>
+                <Button variant="contained" color="primary">
+                  Caracteristicas
+                </Button>
+              </Grid>
+            </div>
+          </Grid>
+
         </Grid>
-        <Grid item xs={4}>
-          <div className="separarbotones imgpequeña">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
-              class="svg-inline--fa fa-scroll fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"></path>
-            </svg>
-            <Grid>
-              <Button variant="contained" color="primary">
-                Historia
-              </Button>
-            </Grid>
-          </div>
-        </Grid>
-        <Grid item xs={4}>
-          <div className="separarbotones imgpequeña">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="scroll"
-              class="svg-inline--fa fa-scroll fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 640 512"><path fill="currentColor" d="M48 0C21.53 0 0 21.53 0 48v64c0 8.84 7.16 16 16 16h80V48C96 21.53 74.47 0 48 0zm208 412.57V352h288V96c0-52.94-43.06-96-96-96H111.59C121.74 13.41 128 29.92 128 48v368c0 38.87 34.65 69.65 74.75 63.12C234.22 474 256 444.46 256 412.57zM288 384v32c0 52.93-43.06 96-96 96h336c61.86 0 112-50.14 112-112 0-8.84-7.16-16-16-16H288z"></path>
-            </svg>
-            <Grid>
-              <Button variant="contained" color="primary">
-                Caracteristicas
-              </Button>
-            </Grid>
-          </div>
-        </Grid>
-      </Grid>
-    </div>
+        </Paper>
+      </div>
   );
 }
