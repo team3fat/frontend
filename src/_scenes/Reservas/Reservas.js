@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
 
 export default class Reservas extends Component {
@@ -46,6 +47,9 @@ export default class Reservas extends Component {
                 <Input id="diaInicio" placeholder="Desde"></Input>
                 <h4>Hasta</h4>
                 <Input id="diaFin" placeholder="Hasta"></Input>
+                <h4>Ingrese una breve descripcion por favor</h4>
+                <Input id="descripcionReserva" placeholder="Ingrese una descripcion"></Input>
+                <Button onClick="submit" color="primary">Reservar!</Button>
             </FormControl>
         );
     }

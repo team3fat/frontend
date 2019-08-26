@@ -8,3 +8,8 @@
 .colortext{
     color: white;
 }
+.centrado{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
