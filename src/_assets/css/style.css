@@ -1,27 +1,29 @@
-.separarboton{
-    margin: 10px;
-}
-.imgpequeña{
-    width: 50px; height: 50px;
-    }
-
-.colortext{
-    color: white;
-}
 .centrado{
     display:block;
     margin-left: auto;
     margin-right: auto;
-  }
+}
+
+.colortext{
+    color: white;
+}
 .fondo {
+    background-attachment: fixed;
     background-image: url("../Img/Background.jpg");
     background-repeat: no-repeat;
     background-size: 100% ;
-    background-attachment: fixed;
+    
 }
+
+.imgpequeña{
+    width: 50px; 
+    height: 50px;
+}
+
+.separarboton{
+    margin: 10px;
+}
+
 .wrapper {
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    }
+    margin: 0;
+}
