@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
-import '../../_assets/css/font.css';
+import '../../_assets/css/style.css';
 
 class NavBar extends React.Component {
 
