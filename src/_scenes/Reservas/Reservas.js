@@ -14,7 +14,7 @@ export default class Reservas extends Component {
             diasTotales: [new Date(), new Date()],
         };
     }
-
+    
     render() {
         return (
             <div>
