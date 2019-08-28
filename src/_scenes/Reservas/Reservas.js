@@ -105,7 +105,7 @@ export default class Reservas extends Component {
     }
 
     transformarFecha(fecha) {
-        return moment(fecha).format('MM-DD-YYYY')
+        return moment(fecha).format('YYYY-MM-DD')
     }
 
 }
