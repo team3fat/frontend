@@ -1,14 +1,15 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import NavBar from './_components/nav-bar/nav-bar.js';
-import AppRoutes from './routes.js';
-import { makeStyles } from '@material-ui/core/styles';
+import './_assets/css/style.css';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import AppRoutes from './routes.js';
 import Button from '@material-ui/core/Button';
+import { BrowserRouter } from 'react-router-dom';
 import Footer from './_components/PieDePagina/Footer.js';
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import NavBar from './_components/nav-bar/nav-bar.js';
+import React from 'react';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -19,7 +20,6 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        
     },
 }));
 
@@ -27,7 +27,7 @@ function App() {
     const classes = useStyles();
 
     return (
-        <div>
+        <div className="fondo img">
             <Grid
             container
             direction="column"

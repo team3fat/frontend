@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import '../../_assets/css/font.css';
 import Paper from '@material-ui/core/Paper';
 import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -49,9 +50,22 @@ function renderFotos() {
             Fotos
           </Button>
         </Grid>
+        <Grid spacing={2}>
+          {renderDescFotos()}
+        </Grid>
       </div>
     </Grid>
   );
+}
+
+function renderDescFotos(){
+  return (
+    <Grid>
+      <Typography gutterBottom variant="subtitle1">
+          dcvrd
+      </Typography>
+    </Grid>
+  )
 }
 
 function renderHistoria() {
@@ -64,9 +78,22 @@ function renderHistoria() {
             Historia
         </Button>
         </Grid>
+        <Grid spacing={2}>
+          {renderDescHistoria()}
+        </Grid>
       </div>
     </Grid>
   );
+}
+
+function renderDescHistoria(){
+  return (
+    <Grid>
+      <Typography gutterBottom variant="subtitle1">
+          dcvrd
+      </Typography>
+    </Grid>
+  )
 }
 
 function renderCaracteristicas() {
@@ -77,11 +104,24 @@ function renderCaracteristicas() {
         <Grid>
           <ListItem>
           <Button variant="contained" size="large" color="primary">
-            Caracterist.
+            Caracteristicas
           </Button>
           </ListItem>
+        </Grid>
+        <Grid spacing={2}>
+          {renderDescCaracteristicas()}
         </Grid>
       </div>
     </Grid>
   );
+}
+
+function renderDescCaracteristicas(){
+  return (
+    <Grid>
+      <Typography gutterBottom variant="subtitle1">
+          dcvrd
+      </Typography>
+    </Grid>
+  )
 }
