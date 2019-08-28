@@ -69,7 +69,7 @@ export default class Reservas extends Component {
         var config = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: objeto,
+            body: JSON.stringify(objeto),
             credentials: 'omit',
             mode: 'cors',
             cache: 'no-cache'
