@@ -11,6 +11,10 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(1),
   },
 
+  // listaboton:{
+  //   tamaño
+  // },
+
   input: {
     display: 'none',
   },
@@ -73,7 +77,7 @@ function renderCaracteristicas() {
         <Grid>
           <ListItem>
           <Button variant="contained" size="large" color="primary">
-            Caracteristicas
+            Caracterist.
           </Button>
           </ListItem>
         </Grid>
