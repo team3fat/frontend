@@ -41,6 +41,8 @@ export default class Reservas extends Component {
         return(
             <div>
                 <Calendar
+                    value={['2019-08-27', '2019-08-28']}
+                    onChange={() => alert("No puedes modificar este calendario. Intenta con el de mas abajo")}
                 />
             </div>
         )
