@@ -41,6 +41,7 @@ export default class Reservas extends Component {
                     minDate={new Date()}
                     onChange={this.onChange}
                     value={this.state.diasAReservar}
+                    onCancel={this.cancelarDiasReservados}
                     format="dd-MM-y"
                 />
             </div>
@@ -49,7 +50,7 @@ export default class Reservas extends Component {
 
     renderFormControl() {
         return (
-            <FormControl method="POST">
+            <FormControl method="POST" fullWidth>
                 <Button onClick={() => { this.onSubmit() }} color="primary">Reservar!</Button>
             </FormControl>
         );
@@ -82,6 +83,7 @@ export default class Reservas extends Component {
                     console.log("Error!", resp)
                 } else {
                     console.log(resp)
+                    window.location.replace("http://localhost:3000/confirmacion")
                 }
             })
             .catch(err => console.log(("Error! This is the error:", err)))
@@ -106,6 +108,10 @@ export default class Reservas extends Component {
 
     transformarFecha(fecha) {
         return moment(fecha).format('YYYY-MM-DD')
+    }
+
+    cancelarDiasReservados(){
+        console.log("Me cancelo!")
     }
 
 }
