@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+import Calendar from 'react-calendar'
+//import { Calendar } from '@fullcalendar/core';
+//import dayGridPlugin from '@fullcalendar/daygrid';
 var moment = require('moment');
 
 export default class Reservas extends Component {
@@ -9,10 +12,9 @@ export default class Reservas extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            diasComienzo: [],
-            diasFinal: [],
-            estado: null,
-            estados: null,
+            diasTraidos: [],
+            estadoActual: null,
+            estadosTraidos: null,
             diasAReservar: [new Date(), new Date()],
         };
     }
@@ -26,15 +28,25 @@ export default class Reservas extends Component {
     render() {
         return (
             <div>
+                <h1>Estos son los dias ya reservados</h1>
+                {this.renderCaledarioConReservas()}
                 <h1>Hace tu reserva aca</h1>
-                <p>{this.state.dia}</p>
-                {this.renderCalendar()}
+                {this.renderCalendario()}
                 {this.renderFormControl()}
             </div>
         );
     }
 
-    renderCalendar() {
+    renderCaledarioConReservas(){
+        return(
+            <div>
+                <Calendar
+                />
+            </div>
+        )
+    }
+
+    renderCalendario() {
         return (
             <div>
                 <DateRangePicker
@@ -61,11 +73,11 @@ export default class Reservas extends Component {
     onSubmit() {
         var comienzo = this.state.diasAReservar[0]
         var final = this.state.diasAReservar[1]
-        var estado = "PEDIDO"
+        var estadoActual = "PEDIDO"
         var objeto = {
             comienzo: this.transformarFecha(comienzo),
             final: this.transformarFecha(final),
-            estado: estado
+            estadoActual: estadoActual
         }
         var config = {
             method: 'POST',
@@ -90,20 +102,17 @@ export default class Reservas extends Component {
     }
 
     getDiasReservados(json) {
-        var diasComienzo = [];
-        var diasFinal = [];
-        var estados = [];
+        var diasTraidos = [];
+        var estadosTraidos = [];
         json.forEach(x => {
-            diasComienzo.push(x.comienzo)
-            diasFinal.push(x.final)
-            estados.push(x.estado)
-            console.log(x)
+            diasTraidos.push(x.comienzo, x.final)
+            estadosTraidos.push(x.estado)
+            //console.log(x)
         });
-        this.setState({ diasComienzo: diasComienzo, diasFinal: diasFinal, estados: estados })
-        console.log(this.state.diasComienzo)
-        console.log(this.state.diasFinal)
-        console.log(this.state.estados)
-        return (diasComienzo, diasFinal, estados)
+        this.setState({ diasTraidos: diasTraidos, estadosTraidos: estadosTraidos })
+        console.log("Lista:", this.state.diasTraidos)
+        console.log(this.state.estadosTraidos)
+        return (diasTraidos, estadosTraidos)
     }
 
     transformarFecha(fecha) {
