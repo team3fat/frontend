@@ -7,9 +7,14 @@
 .colortext{
     color: white;
 }
+
+.colortext2{
+    color: black;
+}
+
 .fondo {
     background-attachment: fixed;
-    background-image: url("../Img/Background.jpg");
+    background-image: url("../Img/Background.png");
     background-repeat: no-repeat;
     background-size: 100% ;
     
