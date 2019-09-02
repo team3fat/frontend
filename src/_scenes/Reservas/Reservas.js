@@ -14,6 +14,7 @@ export default class Reservas extends Component {
         super(props);
         this.state = {
             diasTraidos: [],
+            bookingArray: [],
             estadoActual: null,
             estadosTraidos: null,
             diasAReservar: [new Date(), new Date()],
@@ -42,9 +43,9 @@ export default class Reservas extends Component {
         return (
             <div>
                 <BookingCalendar
-                    bookings={[
-                        new Date()
-                    ]}
+                    bookings={
+                        this.state.bookingArray
+                    }
                 />
             </div>
         )
@@ -108,28 +109,28 @@ export default class Reservas extends Component {
     getDiasReservados(reservas) {
         var diasTraidos = [];
         var estadosTraidos = [];
+        var diasLoopeados = [];
         reservas.forEach(x => {
-            console.log("ESTO", new Date(x.comienzo))
-            { this.loopeoInicioFin(new Date(x.comienzo), new Date(x.final)) }
+            //console.log("ESTO", new Date(x.comienzo))
+            var diasCompletosLoopeados = this.loopeoInicioFin(new Date(x.comienzo), new Date(x.final))
             diasTraidos.push(x.comienzo, x.final)
             estadosTraidos.push(x.estado)
+            diasLoopeados.push(diasCompletosLoopeados)
         });
-        this.setState({ diasTraidos: diasTraidos, estadosTraidos: estadosTraidos })
-        console.log("Lista:", this.state.diasTraidos)
-        console.log(this.state.estadosTraidos)
+        this.setState({ diasTraidos: diasTraidos, estadosTraidos: estadosTraidos, bookingArray: diasLoopeados.flat() })
+        console.log("Dias loopeados", this.state.bookingArray)
+        //console.log("Lista:", this.state.diasTraidos)
+        //console.log(this.state.estadosTraidos)
         return (diasTraidos, estadosTraidos)
     }
 
     loopeoInicioFin(inicio, final) {
         var index;
         var arrayDias = [];
-        console.log(inicio)
-        console.log(final)
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
             var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index)
             arrayDias.push(dia)
         }
-        console.log("Array que le voy a pasar", arrayDias)
         return arrayDias
     }
 
