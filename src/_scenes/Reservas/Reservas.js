@@ -128,7 +128,7 @@ export default class Reservas extends Component {
         var index;
         var arrayDias = [];
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
-            var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index)
+            var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index + 1)
             arrayDias.push(dia)
         }
         return arrayDias
