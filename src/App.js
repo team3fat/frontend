@@ -38,7 +38,7 @@ function App() {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
-                        Campamento Diquecito
+                        Nuevo Complejo Diquecito
                     </Typography>
                     <Button color="inherit" href="/registro">Registrate</Button>
                     <Button color="inherit" href="/ingreso">Iniciar Sesion</Button>
