@@ -1,10 +1,11 @@
+//import Calendar from 'react-calendar'
+//import { Calendar } from '@fullcalendar/core';
+//import dayGridPlugin from '@fullcalendar/daygrid';
+import BookingCalendar from 'react-booking-calendar';
 import React, { Component } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
-import Calendar from 'react-calendar'
-//import { Calendar } from '@fullcalendar/core';
-//import dayGridPlugin from '@fullcalendar/daygrid';
 var moment = require('moment');
 
 export default class Reservas extends Component {
@@ -37,12 +38,13 @@ export default class Reservas extends Component {
         );
     }
 
-    renderCaledarioConReservas(){
-        return(
+    renderCaledarioConReservas() {
+        return (
             <div>
-                <Calendar
-                    value={['2019-08-27', '2019-08-28']}
-                    onChange={() => alert("No puedes modificar este calendario. Intenta con el de mas abajo")}
+                <BookingCalendar
+                    bookings={[
+                        new Date()
+                    ]}
                 />
             </div>
         )
@@ -103,13 +105,14 @@ export default class Reservas extends Component {
             .catch(err => console.log(("Error! This is the error:", err)))
     }
 
-    getDiasReservados(json) {
+    getDiasReservados(reservas) {
         var diasTraidos = [];
         var estadosTraidos = [];
-        json.forEach(x => {
+        reservas.forEach(x => {
+            console.log("ESTO", new Date(x.comienzo))
+            { this.loopeoInicioFin(new Date(x.comienzo), new Date(x.final)) }
             diasTraidos.push(x.comienzo, x.final)
             estadosTraidos.push(x.estado)
-            //console.log(x)
         });
         this.setState({ diasTraidos: diasTraidos, estadosTraidos: estadosTraidos })
         console.log("Lista:", this.state.diasTraidos)
@@ -117,11 +120,24 @@ export default class Reservas extends Component {
         return (diasTraidos, estadosTraidos)
     }
 
+    loopeoInicioFin(inicio, final) {
+        var index;
+        var arrayDias = [];
+        console.log(inicio)
+        console.log(final)
+        for (index = inicio.getDate(); index <= final.getDate(); index++) {
+            var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index)
+            arrayDias.push(dia)
+        }
+        console.log("Array que le voy a pasar", arrayDias)
+        return arrayDias
+    }
+
     transformarFecha(fecha) {
         return moment(fecha).format('YYYY-MM-DD')
     }
 
-    cancelarDiasReservados(){
+    cancelarDiasReservados() {
         console.log("Me cancelo!")
     }
 
