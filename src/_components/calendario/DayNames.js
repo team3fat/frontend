@@ -3,13 +3,13 @@ import Day from './Day';
 
 const DayNames = () => (
   <div className='week names'>
-    <Day>{'Mon'}</Day>
-    <Day>{'Tue'}</Day>
-    <Day>{'Wed'}</Day>
-    <Day>{'Thu'}</Day>
-    <Day>{'Fri'}</Day>
-    <Day>{'Sat'}</Day>
-    <Day>{'Sun'}</Day>
+    <Day>{'Lun'}</Day>
+    <Day>{'Mar'}</Day>
+    <Day>{'Mie'}</Day>
+    <Day>{'Jue'}</Day>
+    <Day>{'Vie'}</Day>
+    <Day>{'Sab'}</Day>
+    <Day>{'Dom'}</Day>
   </div>
 );
 
