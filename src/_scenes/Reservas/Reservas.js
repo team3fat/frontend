@@ -1,7 +1,8 @@
 //import Calendar from 'react-calendar'
 //import { Calendar } from '@fullcalendar/core';
 //import dayGridPlugin from '@fullcalendar/daygrid';
-import BookingCalendar from 'react-booking-calendar';
+// import BookingCalendar from '../../_components/react-booking-calendar/src/BookingCalendar';
+import BookingCalendar from '../../_components/calendario/BookingCalendar'
 import React, { Component } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
