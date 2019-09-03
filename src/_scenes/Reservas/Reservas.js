@@ -6,6 +6,7 @@ import BookingCalendar from '../../_components/calendario/BookingCalendar'
 import React, { Component } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper'
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
 var moment = require('moment');
 
@@ -31,11 +32,13 @@ export default class Reservas extends Component {
     render() {
         return (
             <div>
-                <h1>Estos son los dias ya reservados</h1>
-                {this.renderCaledarioConReservas()}
-                <h1>Hace tu reserva aca</h1>
-                {this.renderCalendario()}
-                {this.renderFormControl()}
+                <Paper>
+                    <h1>Estos son los dias ya reservados</h1>
+                    {this.renderCaledarioConReservas()}
+                    <h1>Hace tu reserva aca</h1>
+                    {this.renderCalendario()}
+                    {this.renderFormControl()}
+                </Paper>
             </div>
         );
     }
@@ -119,7 +122,7 @@ export default class Reservas extends Component {
             diasLoopeados.push(diasCompletosLoopeados)
         });
         this.setState({ diasTraidos: diasTraidos, estadosTraidos: estadosTraidos, bookingArray: diasLoopeados.flat() })
-        console.log("Dias loopeados", this.state.bookingArray)
+        //console.log("Dias loopeados", this.state.bookingArray)
         //console.log("Lista:", this.state.diasTraidos)
         //console.log(this.state.estadosTraidos)
         return (diasTraidos, estadosTraidos)
