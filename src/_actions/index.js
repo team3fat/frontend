@@ -4,8 +4,8 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 
 const BASE_URL = 'http://localhost:8000';
 
-function requestLogin(creds){
-    return{
+function requestLogin(creds) {
+    return {
         type: LOGIN_REQUEST,
         isFetching: true,
         isAuthenticated: false,
@@ -13,8 +13,8 @@ function requestLogin(creds){
     }
 }
 
-function receiveLogin(user){
-    return{
+function receiveLogin(user) {
+    return {
         type: LOGIN_SUCCESS,
         isFetching: false,
         isAuthenticated: true,
@@ -22,8 +22,8 @@ function receiveLogin(user){
     }
 }
 
-function failedlogin(error){
-    return{
+function failedlogin(error) {
+    return {
         type: LOGIN_FAILURE,
         isFetching: false,
         isAuthenticated: false,
@@ -31,8 +31,7 @@ function failedlogin(error){
     }
 }
 
-export default function loginUser(creds){
-    
+export default function loginUser(creds) {
     let config = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -128,15 +127,15 @@ export function verifyToken(token) {
 
         return fetch(BASE_URL + '/diquecito/usuario/', config)
             .then(response =>
-                response.json().then(json => ({json, response}))
-                .then(({json, response}) => {
-                    if(!response.ok){
-                        dispatch(verifyError(json.non_field_errors[0]))
-                        return Promise.reject(json)
-                    } else {
-                        dispatch(receiveVerifyTokenSuccess())
-                    }
-                }).catch(err => console.log('Error ' + err)))
+                response.json().then(json => ({ json, response }))
+                    .then(({ json, response }) => {
+                        if (!response.ok) {
+                            dispatch(verifyError(json.non_field_errors[0]))
+                            return Promise.reject(json)
+                        } else {
+                            dispatch(receiveVerifyTokenSuccess())
+                        }
+                    }).catch(err => console.log('Error ' + err)))
     }
 }
 
@@ -169,9 +168,9 @@ function fetchUsersError(message) {
     }
 }
 
-export function fetchUsers(){
+export function fetchUsers() {
 
-    let config={
+    let config = {
         method: 'GET',
     }
 
@@ -180,16 +179,16 @@ export function fetchUsers(){
         dispatch(requestFetchUsers);
 
         return fetch(BASE_URL + '/diquecito/usuario/', config)
-        .then(response =>
-            response.json().then(json => ({json, response}))
-            .then(({json, response})=>{
-                if(!response.ok){
-                    dispatch(fetchUsersError(json.non_field_errors[0]))
-                    return Promise.reject(json)
-                } else {
-                    //console.log(json)
-                    dispatch(receiveFetchUsers(json))
-                }
-            }).catch(err => console.log("Error " + err)))
+            .then(response =>
+                response.json().then(json => ({ json, response }))
+                    .then(({ json, response }) => {
+                        if (!response.ok) {
+                            dispatch(fetchUsersError(json.non_field_errors[0]))
+                            return Promise.reject(json)
+                        } else {
+                            //console.log(json)
+                            dispatch(receiveFetchUsers(json))
+                        }
+                    }).catch(err => console.log("Error " + err)))
     }
 }
