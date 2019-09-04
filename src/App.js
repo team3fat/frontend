@@ -11,6 +11,7 @@ import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -20,8 +21,11 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        
     },
+    color: {
+        flex: 1,
+        backgroundColor: 'primary',
+    },    
 }));
 
 function App() {
@@ -35,7 +39,7 @@ function App() {
             justify="center"
             alignItems="center">
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar >
                     <Typography variant="h6" className={classes.title}>
                         Campamento Diquecito
                     </Typography>
