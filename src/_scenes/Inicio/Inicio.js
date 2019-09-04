@@ -1,31 +1,23 @@
 import React from 'react';
-import Botones from '../Inicio/Botones.js';
-import Tarjeta from '../Inicio/Tarjetas.js';
-import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Botones from '../Inicio/Botones.js';
+import Tarjetas from '../Inicio/Tarjetas.js';
 
- const useStyles = makeStyles(theme => ({
-   paper: {
-     margin: "50px"
-   },
-
-   input: {
-     display: 'none',
-   },
+const useStyles = makeStyles(theme => ({
+  paper: {
+    margin: "10px",
+    padding: theme.spacing(2),
+  },
 }));
 
-function TraerButtonAppBar() {
+export default function TraerInicio() {
   const classes = useStyles();
+
   return (
     <div>
-        <Grid>
-          <Botones />
-        </Grid>
-        <Grid className= {classes.paper}>
-          <Tarjeta />
-        </Grid>
+        <Paper className={classes.paper} ><Botones /></Paper>
+        <Paper className={classes.paper}><Tarjetas /></Paper>
     </div>
   );
 }
-
-export default TraerButtonAppBar;
