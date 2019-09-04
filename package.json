@@ -20,6 +20,7 @@
     "react": "^16.8.6",
     "react-booking-calendar": "^1.0.3",
     "react-calendar": "^2.19.0",
+    "react-daterange-picker": "^2.0.1",
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
     "react-pie-menu": "^0.2.5",

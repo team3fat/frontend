@@ -76,7 +76,6 @@ export default class Reservas extends Component {
             </FormControl>
         );
     }
-
     onChange = date => this.setState({ diasAReservar: date })
 
     onSubmit() {

@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import AppRoutes from './routes.js';
 import Button from '@material-ui/core/Button';
 import { BrowserRouter } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Footer from './_components/PieDePagina/Footer.js';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -38,15 +39,17 @@ function App() {
             direction="column"
             justify="center"
             alignItems="center">
+            <CssBaseline>
             <AppBar position="static">
                 <Toolbar >
                     <Typography variant="h6" className={classes.title}>
-                        Campamento Diquecito
+                        Nuevo Complejo Diquecito
                     </Typography>
                     <Button color="inherit" href="/registro">Registrate</Button>
                     <Button color="inherit" href="/ingreso">Iniciar Sesion</Button>
                 </Toolbar>
             </AppBar>
+            </CssBaseline>
             <BrowserRouter>
                 <div className="main">
                     <section className="main--section">
