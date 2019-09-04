@@ -21,7 +21,9 @@ export default function ButtonAppBar() {
     <div>
         <Grid container
           className={classes.button}
-          >
+          direction="row"
+          justify="space-between"
+          alignItems="center">
           {renderFotos()}
           {renderHistoria()}
           {renderDetalles()}

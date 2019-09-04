@@ -19,7 +19,7 @@ function TarjetaFotos() {
         Fotos
             </Typography>
       <Typography gutterBottom variant="subtitle1">
-        dcvrd
+        Esta tarjeta es de fotos
             </Typography>
     </div>
   )
