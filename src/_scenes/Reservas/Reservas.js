@@ -2,13 +2,15 @@
 //import { Calendar } from '@fullcalendar/core';
 //import dayGridPlugin from '@fullcalendar/daygrid';
 // import BookingCalendar from '../../_components/react-booking-calendar/src/BookingCalendar';
-import BookingCalendar from '../../_components/calendario/BookingCalendar'
-import React, { Component } from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper'
+//import FormControl from '@material-ui/core/FormControl';
+//import Button from '@material-ui/core/Button';
+//import Paper from '@material-ui/core/Paper';
+import BookingCalendar from '../../_components/calendario/BookingCalendar';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+import { Grid, FormControl, Button, Paper, Typography } from '@material-ui/core';
 var moment = require('moment');
+import React, { Component } from 'react';
+import './Reservas.css';
 
 export default class Reservas extends Component {
 
@@ -31,14 +33,23 @@ export default class Reservas extends Component {
 
     render() {
         return (
-            <div>
-                <Paper>
-                    <h1>Estos son los dias ya reservados</h1>
-                    {this.renderCaledarioConReservas()}
-                    <h1>Hace tu reserva aca</h1>
-                    {this.renderCalendario()}
-                    {this.renderFormControl()}
-                </Paper>
+            <div className='mainDiv'>
+                <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                >
+                    <Grid item xs={12}>
+                        <Paper className='paper' square={true} xs={12}>
+                            <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
+                            {this.renderCaledarioConReservas()}
+                            <Typography variant="h3" className='header'>Hace tu reserva aca</Typography>
+                            {this.renderCalendario()}
+                            {this.renderFormControl()}
+                        </Paper>
+                    </Grid>
+                </Grid>
             </div>
         );
     }
