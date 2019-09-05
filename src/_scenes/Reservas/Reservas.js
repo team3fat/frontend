@@ -63,7 +63,7 @@ export default class Reservas extends Component {
                     }
                 />
             </div>
-        )
+        );
     }
 
     renderCalendario() {
@@ -124,28 +124,38 @@ export default class Reservas extends Component {
         var diasTraidos = [];
         var estadosTraidos = [];
         var diasLoopeados = [];
-        reservas.forEach(x => {
-            //console.log("ESTO", new Date(x.comienzo))
-            var diasCompletosLoopeados = this.loopeoInicioFin(new Date(x.comienzo), new Date(x.final))
-            diasTraidos.push(x.comienzo, x.final)
-            estadosTraidos.push(x.estado)
+        reservas.forEach(datos => {
+            //console.log("ESTADO", datos)
+            var diasCompletosLoopeados = this.loopeoInicioFin(new Date(datos.comienzo), new Date(datos.final), datos.estado)
+            diasTraidos.push(datos.comienzo, datos.final)
+            estadosTraidos.push(datos.estado)
             diasLoopeados.push(diasCompletosLoopeados)
         });
-        this.setState({ diasTraidos: diasTraidos, estadosTraidos: estadosTraidos, bookingArray: diasLoopeados.flat() })
-        //console.log("Dias loopeados", this.state.bookingArray)
-        //console.log("Lista:", this.state.diasTraidos)
-        //console.log(this.state.estadosTraidos)
+        this.setState({
+            diasTraidos: diasTraidos,
+            estadosTraidos: estadosTraidos,
+            bookingArray: diasLoopeados.flat()
+        });
+        console.log("Bookin", this.state.bookingArray)
         return (diasTraidos, estadosTraidos)
     }
 
-    loopeoInicioFin(inicio, final) {
+    loopeoInicioFin(inicio, final, estado) {
         var index;
-        var arrayDias = [];
+        var arrayDiasYEstados = [];
+        var estadosActuales = [];
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
             var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index + 1)
-            arrayDias.push(dia)
+            var shapeDelBooking = {
+                date: dia,
+                estado: estado
+            };
+            // estadosActuales.push(estado);
+            arrayDiasYEstados.push(shapeDelBooking);
         }
-        return arrayDias
+        //console.log('Estos son las fechas', arrayDiasYEstados)
+        //console.log('Termine con estos estados', estadosActuales)
+        return arrayDiasYEstados
     }
 
     transformarFecha(fecha) {

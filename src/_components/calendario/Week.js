@@ -13,6 +13,7 @@ export default class Week extends React.Component {
   }
 
   isBooked(date, isNight) {
+    console.log('Adentro de isBooked', this.props.bookings)
     let isBooked = false;
     const sortedBookings = this.props.bookings.sort(this.sortDatesAsc);
     for (let i = 0; i < sortedBookings.length; i++) {
