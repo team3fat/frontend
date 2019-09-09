@@ -16,23 +16,30 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(0),
     textAlign: 'center',
-    marginBottom: "35px",
+    marginLeft: "50px",
+    marginRight: "50px",  
   },
   title: {
     padding: theme.spacing(0),
     textAlign: 'center',
     minHeight: '35px',
+    minWidth: "280px",
+    marginBottom: "25px",
+    marginTop: "10px",
+    background: '#3949ab',
   },  
   img: {
     display: 'block',
-    maxWidth: '600px',
-    maxHeight: '400px',
+    maxWidth: '610px',
+    maxHeight: '403px',
   },
   card: {
     minWidth: "1210px",
-    minHeight: "280px",
-  }
-
+  },
+  end: {
+    minWidth: "1210px",
+    marginBottom: "50px",
+  },
 }));
 
 export default function informacion() {
@@ -40,14 +47,13 @@ export default function informacion() {
 
   return (
     <div className={classes.root}>
-        <Grid item xs={12}>
-          <Paper className={classes.title} square={true}>
-          <Grid container
-                justify="flex-end"
-                alignItems="flex-end">
-            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Salon De Uso Multiple</h5>
-            </Grid>
-          </Paper>
+      <Grid container
+                direction="row"
+                justify="center"
+                alignItems="center">
+        <Paper className={classes.title} square={true}>
+        <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Sectores</h5>
+         </Paper>
         </Grid>
       <Paper className={classes.paper} square={true}>
         <Grid className={classes.card}container
@@ -58,6 +64,91 @@ export default function informacion() {
             <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/Salon.jpg")}/>
             </Grid>
             <Grid item xs={6}>
+            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Salon De Uso Multiple</h5>
+            <Typography className="colortext2">{messageSalon}</Typography> 
+            </Grid>
+      </Grid>
+      </Paper>
+        <Paper className={classes.paper} square={true}>
+          <Grid className={classes.card} container
+              direction="row"
+              justify="center"
+              alignItems="center">
+          <Grid item xs={6}>
+            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Canchas</h5>
+             <Typography className="colortext2">{messageSalon}</Typography> 
+          </Grid>
+            <Grid item xs={6}>
+            <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/Canchas.jpg")}/>
+          </Grid>
+        </Grid>
+      </Paper>
+      <Paper className={classes.paper} square={true}>
+        <Grid className={classes.card}container
+                direction="row"
+                justify="center"
+                alignItems="center">
+            <Grid item xs={6}>
+            <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/Pileta.jpg")}/>
+            </Grid>
+            <Grid item xs={6}>
+            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Pileta</h5>
+            <Typography className="colortext2">{messageSalon}</Typography> 
+            </Grid>
+      </Grid>
+      </Paper>
+        <Paper className={classes.paper} square={true}>
+          <Grid className={classes.card} container
+              direction="row"
+              justify="center"
+              alignItems="center">
+          <Grid item xs={6}>
+            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Habitaciones</h5>
+             <Typography className="colortext2">{messageSalon}</Typography> 
+          </Grid>
+            <Grid item xs={6}>
+            <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/Habitaciones.jpg")}/>
+          </Grid>
+        </Grid>
+      </Paper>
+      <Paper className={classes.paper} square={true}>
+        <Grid className={classes.card}container
+                direction="row"
+                justify="center"
+                alignItems="center">
+            <Grid item xs={6}>
+            <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/Cocina.jpg")}/>
+            </Grid>
+            <Grid item xs={6}>
+            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Cocina</h5>
+            <Typography className="colortext2">{messageSalon}</Typography> 
+            </Grid>
+      </Grid>
+      </Paper>
+        <Paper className={classes.paper} square={true}>
+          <Grid className={classes.card} container
+              direction="row"
+              justify="center"
+              alignItems="center">
+          <Grid item xs={6}>
+            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Cabañas</h5>
+             <Typography className="colortext2">{messageSalon}</Typography> 
+          </Grid>
+            <Grid item xs={6}>
+            <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/Cabana.jpg")}/>
+          </Grid>
+        </Grid>
+      </Paper>
+      <Paper className={classes.paper} square={true}>
+        <Grid className={classes.end} container
+                direction="row"
+                justify="center"
+                alignItems="center">
+            <Grid item xs={6}>
+            <img className={classes.img} alt={"complex"} src={require("../../_assets/Img/Banos.jpg")}/>
+            </Grid>
+            <Grid item xs={6}>
+            <h5 className="colortext2 MuiTypography-root makeStyles-title-3 MuiTypography-h6">Baños</h5>
             <Typography className="colortext2">{messageSalon}</Typography> 
             </Grid>
       </Grid>

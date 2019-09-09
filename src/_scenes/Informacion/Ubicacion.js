@@ -35,7 +35,15 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     minWidth: "1240px",
-  }
+  },
+  title: {
+    padding: theme.spacing(0),
+    textAlign: 'center',
+    minHeight: '35px',
+    minWidth: "280px",
+    marginTop: "25px",
+    background: '#3949ab',
+  },  
 }));
 
 export default function informacion() {
@@ -43,6 +51,14 @@ export default function informacion() {
 
   return (
     <div className={classes.root}>
+      <Grid container
+                direction="row"
+                justify="center"
+                alignItems="center">
+        <Paper className={classes.title} square={true}>
+        <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6">Ubicación</h5>
+         </Paper>
+        </Grid>
       <Paper className={classes.paper} square={true}>
         <Grid container spacing={4} className={classes.card}>
           <Grid item xs={4}>
