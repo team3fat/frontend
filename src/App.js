@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     color: {
         flex: 1,
         backgroundColor: 'primary',
-    },    
+    },
 }));
 
 function App() {

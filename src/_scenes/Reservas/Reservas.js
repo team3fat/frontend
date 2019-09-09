@@ -28,7 +28,6 @@ export default class Reservas extends Component {
             .then(response => response.json())
             .then(json => { this.getDiasReservados(json) })
     }
-
     render() {
         return (
             <div>
@@ -41,6 +40,17 @@ export default class Reservas extends Component {
                 </Paper>
             </div>
         );
+    }
+    renderCaledarioConReservas() {
+        return (
+            <div>
+                <BookingCalendar
+                    bookings={
+                        this.state.bookingArray
+                    }
+                />
+            </div>
+        )
     }
 
     renderCaledarioConReservas() {
