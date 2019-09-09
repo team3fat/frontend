@@ -22,6 +22,12 @@ export default class Reservas extends Component {
             diasAReservar: [new Date(), new Date()],
         };
     }
+
+    componentWillMount() {
+        fetch("http://127.0.0.1:8000/diquecito/calendario/")
+            .then(response => response.json())
+            .then(json => { this.getDiasReservados(json) })
+    }
     render() {
         return (
             <div>
@@ -35,6 +41,18 @@ export default class Reservas extends Component {
             </div>
         );
     }
+    renderCaledarioConReservas() {
+        return (
+            <div>
+                <BookingCalendar
+                    bookings={
+                        this.state.bookingArray
+                    }
+                />
+            </div>
+        )
+    }
+
     renderCaledarioConReservas() {
         return (
             <div>
@@ -68,7 +86,6 @@ export default class Reservas extends Component {
             </FormControl>
         );
     }
-
     onChange = date => this.setState({ diasAReservar: date })
 
     onSubmit() {
