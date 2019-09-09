@@ -20,8 +20,8 @@ export default function FullWidthGrid() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={5}>
-        <Grid item xs>
+      <Grid container justify="center" spacing={5}>
+        <Grid item xs={8}>
           <Paper className={classes.paper}><Botones /></Paper>
         </Grid>
       <Grid
