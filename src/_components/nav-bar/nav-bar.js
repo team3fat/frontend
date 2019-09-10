@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
 import '../../_assets/css/style.css';
-import Paper from '@material-ui/core/Paper';
+
 class NavBar extends React.Component {
 
     constructor(props) {
@@ -33,7 +33,6 @@ class NavBar extends React.Component {
         return (
             <nav>
                 <div>
-                    <Paper>
                     <Grid container direction="column" justify="space-between" alignItems="center">
                         <Grid item>
                             <ButtonGroup size="small" aria-label="small outlined button group" >
@@ -54,7 +53,6 @@ class NavBar extends React.Component {
                             </ButtonGroup>
                         </Grid>
                     </Grid>
-                    </Paper>
                 </div>
                 {this.state.diaShow ? "dia" : null}
             </nav>
