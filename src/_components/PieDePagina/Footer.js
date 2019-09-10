@@ -28,7 +28,7 @@ export default function AutoGrid() {
       <Paper className={classes.paper} square={true}>
       <Grid wrap="nowrap" container spacing={1}>
         <Grid item xs={7}>
-          <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >El Diquecito Grupo 3</h5>
+          <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Nuevo Complejo Diquecito</h5>
           <Typography className="colortext">{message}</Typography>
         </Grid>
         <Grid item xs={5}>
