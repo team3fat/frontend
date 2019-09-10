@@ -8,6 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper'
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+import { Grid } from '@material-ui/core';
 var moment = require('moment');
 
 export default class Reservas extends Component {
