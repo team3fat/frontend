@@ -103,7 +103,7 @@
     cursor: default;
   }
   .booking-calendar .week .day-box .day.different-month {
-    color: gray;
+    color: #37474f;
   }
   .booking-calendar .week .day-box .day.selected {
     background: #fff;
@@ -121,7 +121,7 @@
     z-index: 1;
   }
   .booking-calendar .week .day-box .day.booked-day:before {
-    background-color: #7986cb;
+    /* background-color: #7986cb; */
     content: '';
     height: 100%;
     left: 0%;
@@ -135,7 +135,7 @@
     z-index: 1;
   }
   .booking-calendar .week .day-box .day.booked-night:after {
-    background-color: #7986cb;
+    /* background-color: #7986cb; */
     content: '';
     height: 100%;
     left: -100%;
@@ -154,6 +154,12 @@
   .booking-calendar .week.names > span {
     color: #f8c982;
     font-weight: bold;
+  }
+  .booking-calendar .week .day-box .day.reservado{
+    background-color: #e57373;
+  }
+  .booking-calendar .week .day-box .day.pedido{
+    background-color: #ffeb3b;
   }
   @media (min-width: 600px) {
     .booking-calendar {
@@ -174,4 +180,4 @@
     .booking-calendar {
       font-size: 28px;
     }
-  } 
+  }

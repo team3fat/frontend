@@ -43,6 +43,8 @@ export default class Reservas extends Component {
                     <Grid item xs={12}>
                         <Paper className='paper' square={true} xs={12}>
                             <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
+                            <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
+                            <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
                             {this.renderCaledarioConReservas()}
                             <Typography variant="h3" className='header'>Hace tu reserva aca</Typography>
                             {this.renderCalendario()}
@@ -106,7 +108,6 @@ export default class Reservas extends Component {
             mode: 'cors',
             cache: 'no-cache'
         }
-        console.log(objeto)
         fetch("http://127.0.0.1:8000/diquecito/reservation/", config)
             // .then(res => res.json())
             .then(resp => {
@@ -125,7 +126,6 @@ export default class Reservas extends Component {
         var estadosTraidos = [];
         var diasLoopeados = [];
         reservas.forEach(datos => {
-            //console.log("ESTADO", datos)
             var diasCompletosLoopeados = this.loopeoInicioFin(new Date(datos.comienzo), new Date(datos.final), datos.estado)
             diasTraidos.push(datos.comienzo, datos.final)
             estadosTraidos.push(datos.estado)
@@ -136,7 +136,6 @@ export default class Reservas extends Component {
             estadosTraidos: estadosTraidos,
             bookingArray: diasLoopeados.flat()
         });
-        console.log("Bookin", this.state.bookingArray)
         return (diasTraidos, estadosTraidos)
     }
 
@@ -150,11 +149,8 @@ export default class Reservas extends Component {
                 date: dia,
                 estado: estado
             };
-            // estadosActuales.push(estado);
             arrayDiasYEstados.push(shapeDelBooking);
         }
-        //console.log('Estos son las fechas', arrayDiasYEstados)
-        //console.log('Termine con estos estados', estadosActuales)
         return arrayDiasYEstados
     }
 

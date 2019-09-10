@@ -3,8 +3,12 @@
     margin: 50px;
 }
 
-.grid{
+.reservado{
+    color: #e57373;
+}
 
+.pedido{
+    color: #ffeb3b;
 }
 
 .mainDiv{
