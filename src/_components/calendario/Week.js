@@ -1,22 +1,22 @@
 import React from 'react';
 import moment from 'moment';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import Day from './Day';
 
 export default class Week extends React.Component {
 
   sortDatesAsc(date1, date2) {
-    if (date1 > date2) {
+    if (date1.date > date2.date) {
       return 1;
     }
-    return date1 < date2 ? -1 : 0;
+    return date1.date < date2.date ? -1 : 0;
   }
 
   isBooked(date, isNight) {
     let isBooked = false;
     const sortedBookings = this.props.bookings.sort(this.sortDatesAsc);
     for (let i = 0; i < sortedBookings.length; i++) {
-      const currentBooking = isNight ? moment(sortedBookings[i]).add(1, 'days') : sortedBookings[i];
+      const currentBooking = isNight ? moment(sortedBookings[i].date).add(1, 'days') : sortedBookings[i].date;
       if (date.isSame(currentBooking, 'day')) {
         isBooked = true;
         break;
@@ -25,12 +25,30 @@ export default class Week extends React.Component {
     return isBooked;
   }
 
+  setEstado(date) {
+    let estado = '';
+    const sortedBookings = this.props.bookings.sort(this.sortDatesAsc);
+    for (let i = 0; i < sortedBookings.length; i++) {
+      const currentBooking = sortedBookings[i].date;
+      if (date.isSame(currentBooking, 'day')) {
+        estado = sortedBookings[i].estado;
+        break;
+      }
+    }
+    return estado;
+  }
+
+
   isBookedDay(date) {
     return this.isBooked(date, false);
   }
 
   isBookedNight(date) {
     return this.isBooked(date, true);
+  }
+
+  isBookedState(date) {
+    return this.isBooked(date, true)
   }
 
   render() {
@@ -46,6 +64,7 @@ export default class Week extends React.Component {
         isBookedNight: this.isBookedNight(date),
         isCurrentMonth: date.month() === month.month(),
         isToday: date.isSame(new Date(), 'day'),
+        estado: this.setEstado(date),
         date,
       };
 
@@ -61,6 +80,12 @@ export default class Week extends React.Component {
       }
       if (day.isBookedDay) {
         className += ' booked-day';
+      }
+      if (day.estado === 'RESERVADO') {
+        className += ' reservado'
+      }
+      if (day.estado === 'PEDIDO') {
+        className += ' pedido'
       }
       if (day.isBookedNight) {
         className += ' booked-night';
@@ -93,7 +118,10 @@ export default class Week extends React.Component {
 }
 
 Week.propTypes = {
-  bookings: PropTypes.array,
+  bookings: PropTypes.arrayOf(PropTypes.shape({
+    date: PropTypes.instanceOf(Date),
+    estado: PropTypes.string
+  })),
   clickable: PropTypes.bool.isRequired,
   date: PropTypes.object,
   month: PropTypes.object,

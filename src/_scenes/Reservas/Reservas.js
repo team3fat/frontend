@@ -2,13 +2,15 @@
 //import { Calendar } from '@fullcalendar/core';
 //import dayGridPlugin from '@fullcalendar/daygrid';
 // import BookingCalendar from '../../_components/react-booking-calendar/src/BookingCalendar';
-import BookingCalendar from '../../_components/calendario/BookingCalendar'
-import React, { Component } from 'react';
-import FormControl from '@material-ui/core/FormControl';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper'
+//import FormControl from '@material-ui/core/FormControl';
+//import Button from '@material-ui/core/Button';
+//import Paper from '@material-ui/core/Paper';
+import BookingCalendar from '../../_components/calendario/BookingCalendar';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+import { Grid, FormControl, Button, Paper, Typography } from '@material-ui/core';
 var moment = require('moment');
+import React, { Component } from 'react';
+import './Reservas.css';
 
 export default class Reservas extends Component {
 
@@ -31,14 +33,25 @@ export default class Reservas extends Component {
 
     render() {
         return (
-            <div>
-                <Paper>
-                    <h1>Estos son los dias ya reservados</h1>
-                    {this.renderCaledarioConReservas()}
-                    <h1>Hace tu reserva aca</h1>
-                    {this.renderCalendario()}
-                    {this.renderFormControl()}
-                </Paper>
+            <div className='mainDiv'>
+                <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                >
+                    <Grid item xs={12}>
+                        <Paper className='paper' square={true} xs={12}>
+                            <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
+                            <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
+                            <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
+                            {this.renderCaledarioConReservas()}
+                            <Typography variant="h3" className='header'>Hace tu reserva aca</Typography>
+                            {this.renderCalendario()}
+                            {this.renderFormControl()}
+                        </Paper>
+                    </Grid>
+                </Grid>
             </div>
         );
     }
@@ -52,7 +65,7 @@ export default class Reservas extends Component {
                     }
                 />
             </div>
-        )
+        );
     }
 
     renderCalendario() {
@@ -95,7 +108,6 @@ export default class Reservas extends Component {
             mode: 'cors',
             cache: 'no-cache'
         }
-        console.log(objeto)
         fetch("http://127.0.0.1:8000/diquecito/reservation/", config)
             // .then(res => res.json())
             .then(resp => {
@@ -113,28 +125,33 @@ export default class Reservas extends Component {
         var diasTraidos = [];
         var estadosTraidos = [];
         var diasLoopeados = [];
-        reservas.forEach(x => {
-            //console.log("ESTO", new Date(x.comienzo))
-            var diasCompletosLoopeados = this.loopeoInicioFin(new Date(x.comienzo), new Date(x.final))
-            diasTraidos.push(x.comienzo, x.final)
-            estadosTraidos.push(x.estado)
+        reservas.forEach(datos => {
+            var diasCompletosLoopeados = this.loopeoInicioFin(new Date(datos.comienzo), new Date(datos.final), datos.estado)
+            diasTraidos.push(datos.comienzo, datos.final)
+            estadosTraidos.push(datos.estado)
             diasLoopeados.push(diasCompletosLoopeados)
         });
-        this.setState({ diasTraidos: diasTraidos, estadosTraidos: estadosTraidos, bookingArray: diasLoopeados.flat() })
-        //console.log("Dias loopeados", this.state.bookingArray)
-        //console.log("Lista:", this.state.diasTraidos)
-        //console.log(this.state.estadosTraidos)
+        this.setState({
+            diasTraidos: diasTraidos,
+            estadosTraidos: estadosTraidos,
+            bookingArray: diasLoopeados.flat()
+        });
         return (diasTraidos, estadosTraidos)
     }
 
-    loopeoInicioFin(inicio, final) {
+    loopeoInicioFin(inicio, final, estado) {
         var index;
-        var arrayDias = [];
+        var arrayDiasYEstados = [];
+        var estadosActuales = [];
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
             var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index + 1)
-            arrayDias.push(dia)
+            var shapeDelBooking = {
+                date: dia,
+                estado: estado
+            };
+            arrayDiasYEstados.push(shapeDelBooking);
         }
-        return arrayDias
+        return arrayDiasYEstados
     }
 
     transformarFecha(fecha) {
