@@ -20,16 +20,16 @@ export default function FullWidthGrid() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={5}>
-        <Grid item xs>
-          <Paper className={classes.paper}><Botones /></Paper>
+      <Grid container justify="center" spacing={5}>
+        <Grid item xs={8}>
+          <Paper className={classes.paper} square={true}><Botones /></Paper>
         </Grid>
       <Grid
         container
         direction="column"
         justify="space-around"
         alignItems="stretch">
-        <Paper className={classes.paper}><Tarjetas /></Paper>
+        <Paper className={classes.paper} square={true}><Tarjetas /></Paper>
       </Grid>
       </Grid>
     </div>
