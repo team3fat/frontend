@@ -51,7 +51,7 @@ function App() {
             </AppBar>
             </CssBaseline>
             <BrowserRouter>
-                <div className="main">
+                <div className="main" style={{minHeight: "calc(100vh - 200px) "}}>
                     <section className="main--section">
                         <NavBar />
                         <AppRoutes />
