@@ -1,83 +1,82 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Grid from '@material-ui/core/Grid';
-import '../../_assets/css/style.css';
+import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-class NavBar extends React.Component {
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            diaShow: false
-        }
-    }
-
-    diaChanged() {
-        this.setState({
-            diaShow: true
-        })
-
-    }
-
-    componentWillMount() {
-        // window.addEventListener('DiaChanged', this.diaChanged.bind(this))
-    };
-
-    componentWillUnmount() {
-        //window.removeEventListener('DiaChanged')
-    }
-
-    render() {
-        return (
-            <nav>
-                <div>
-                    <Grid container direction="column" justify="space-between" alignItems="center">
-                        <Grid item>
-                            <ButtonGroup size="small" aria-label="small outlined button group" >
-                                <div className="separarboton">
-                                    <NavLink {...this.getNavLinkProps('inicio')}><Button size="small" variant="outlined" >
-                                        Inicio
-                                    </Button></NavLink>
-                                </div>
-                                <div className="separarboton">
-                                    <NavLink {...this.getNavLinkProps('informacion')}><Button size="small" variant="outlined"
-                                        className="separarboton">Informacion
-                                    </Button></NavLink>
-                                </div>
-                                <div className="separarboton">
-                                    <NavLink {...this.getNavLinkProps('reservas')}><Button size="small" variant="outlined">
-                                        Reservas</Button></NavLink>
-                                </div>
-                            </ButtonGroup>
-                        </Grid>
-                    </Grid>
-                </div>
-                {this.state.diaShow ? "dia" : null}
-            </nav>
-
-        );
-    }
-
-    getNavLinkProps(specificProp) {
-        var props = {
-            inicio: {
-                exact: true,
-                to: '/'
-            },
-            informacion: {
-                exact: true,
-                to: '/info'
-            },
-            reservas: {
-                exact: true,
-                to: '/reservas'
-            }
-        };
-
-        return props[specificProp];
-    }
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
+    >
+      <Box p={3}>{children}</Box>
+    </Typography>
+  );
 }
 
-export default NavBar;
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `full-width-tab-${index}`,
+    'aria-controls': `full-width-tabpanel-${index}`,
+  };
+}
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        flexGrow: 1,
+        width: '100%',
+        backgroundColor: theme.palette.background.paper,
+      },
+    
+}));
+
+export default function FullWidthTabs() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeIndex = index => {
+    setValue(index);
+  };
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="fullWidth"
+          aria-label="full width tabs example"
+        >
+          <Tab label="Inicio" to="/" component={Link} />
+          <Tab label="Información" to="/info" component={Link} />
+          <Tab label="Reservaciones" to="/reservas" component={Link} />
+        </Tabs>
+      </AppBar>
+    </div>
+  );
+}
