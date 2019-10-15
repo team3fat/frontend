@@ -29,7 +29,7 @@ export default function FullWidthGrid() {
         direction="column"
         justify="space-around"
         alignItems="stretch">
-        <Paper className={classes.paper} square={true}><Tarjetas /></Paper>
+        <Paper className={classes.paper}><Tarjetas /></Paper>
       </Grid>
       </Grid>
     </div>
