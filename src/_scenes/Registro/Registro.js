@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import ListItem from '@material-ui/core/ListItem';
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -45,6 +46,17 @@ const useStyles = makeStyles(theme => ({
     height: "calc(100vh -64px)"
   },
 }));
+
+const ranges = [
+  {
+    value: 'F',
+    label: 'Femenino',
+  },
+  {
+    value: 'M',
+    label: 'Masculino',
+  },
+];
 
 export default function ElementosRegistro() { 
   return(
@@ -130,12 +142,19 @@ function formulario() {
                       className={clsx(classes.textField, classes.dense)}
                       margin="normal"
                   />
-                  <TextField
-                      id="standard-dense"
-                      label="Sexo"
-                      className={clsx(classes.textField, classes.dense)}
-                      margin="dense"
-                  />
+      <TextField
+        select
+        label="Sexo"
+        className={clsx(classes.margin, classes.textField)}
+        value={values.weightRange}
+        onChange={handleChange('weightRange')}
+      >
+        {ranges.map(option => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
                 </ListItem>
                  </Grid> 
                 </Grid>
