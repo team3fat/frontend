@@ -6,7 +6,6 @@ import Paper from '@material-ui/core/Paper';
 import ListItem from '@material-ui/core/ListItem';
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     width: 200,
   },
   button: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(5),
   },
   dense: {
     marginTop: 19,
@@ -47,17 +46,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ranges = [
-  {
-    value: 'F',
-    label: 'Femenino',
-  },
-  {
-    value: 'M',
-    label: 'Masculino',
-  },
-];
-
 export default function ElementosRegistro() { 
   return(
     <div>
@@ -71,15 +59,6 @@ export default function ElementosRegistro() {
 }
 function formulario() {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    name: '',
-    age: '',
-    multiline: 'Controlled',
-  });
-
-  const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
-  };
 
   return (
     <div className={classes.root}>
@@ -92,83 +71,75 @@ function formulario() {
          </Paper>
         </Grid>
         <Paper className={classes.paper} square={true}>
-              <form className={classes.container} noValidate autoComplete="off">
-                <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-                  >
-                <Grid item xs>
+          <form className={classes.container} noValidate autoComplete="off">
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item xs>
                 <ListItem>
                   <TextField
-                      id="standard-dense"
-                      label="Nombre"
-                      className={clsx(classes.textField, classes.dense)}
-                      margin="normal"
+                    id="standard-dense"
+                    label="Nombre"
+                    className={clsx(classes.textField, classes.dense)}
+                    margin="normal"
                   />
                   <TextField
-                      id="standard-dense"
-                      label="Apellido"
-                      className={clsx(classes.textField, classes.dense)}
-                      margin="dense"
+                    id="standard-dense"
+                    label="Apellido"
+                    className={clsx(classes.textField, classes.dense)}
+                    margin="dense"
                   />
+                  <TextField
+                    id="standard-dense"
+                    label="Telefono celular"
+                    className={clsx(classes.textField, classes.dense)}
+                    type="number"
+                    margin="normal"
+                  />                
                 </ListItem>
-                </Grid>
-                <Grid item xs>
+              </Grid>
+              <Grid item xs>
                 <ListItem>
+                <TextField
+                    id="standard-search"
+                    label="E-mail"
+                    type="search"
+                    className={classes.textField}
+                    margin="normal"
+                  />                  
                   <TextField
-                      id="standard-search"
-                      label="E-mail"
-                      type="search"
-                      className={classes.textField}
-                      margin="normal"
+                    id="standard-password-input"
+                    label="Password"
+                    className={classes.textField}
+                    type="password"
+                    autoComplete="current-password"
+                    margin="normal"
                   />
                   <TextField
-                      id="standard-password-input"
-                      label="Password"
-                      className={classes.textField}
-                      type="password"
-                      autoComplete="current-password"
-                      margin="normal"
+                    id="standard-password-input"
+                    label="Conffirm Password"
+                    className={classes.textField}
+                    type="password"
+                    autoComplete="current-password"
+                    margin="normal"
                   />
                 </ListItem>
-                 </Grid>
-                 <Grid item xs>
-                 <ListItem>
-                  <TextField
-                      id="standard-dense"
-                      label="Telefono celular"
-                      className={clsx(classes.textField, classes.dense)}
-                      margin="normal"
-                  />
-      <TextField
-        select
-        label="Sexo"
-        className={clsx(classes.margin, classes.textField)}
-        value={values.weightRange}
-        onChange={handleChange('weightRange')}
-      >
-        {ranges.map(option => (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
-          </MenuItem>
-        ))}
-      </TextField>
-                </ListItem>
-                 </Grid> 
-                </Grid>
-                <Grid
-                    container
-                    direction="row"
-                    justify="center"
-                    alignItems="center"
-                  >
-                  <Button variant="contained" color="primary" className={classes.button}>
-                    Crear cuenta
-                  </Button>
-                </Grid>
-              </form>
+              </Grid> 
+            </Grid>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Button variant="contained" color="primary" className={classes.button}>
+                Crear cuenta
+              </Button>
+            </Grid>
+          </form>
         </Paper>
     </div>
   );
