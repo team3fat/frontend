@@ -102,7 +102,7 @@ export default function TextFields() {
                     justify="center"
                     alignItems="center"
                   >
-                  <Button variant="contained" color="primary" className={classes.button}>
+                  <Button variant="contained" href="/registro" color="primary" className={classes.button}>
                     Registrarse
                   </Button>
                   <Button variant="contained" color="primary" className={classes.button}>
