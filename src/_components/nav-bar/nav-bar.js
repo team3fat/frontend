@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -32,12 +31,7 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
-  };
-}
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -67,12 +61,14 @@ export default function FullWidthTabs() {
         <Tabs
           value={value}
           onChange={handleChange}
+          wrapped={true}
+          fullWidth={true}
           indicatorColor="primary"
           textColor="primary"
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Inicio" to="/" component={Link} />
+          <Tab label="Inicio" to="/inicio" component={Link} />
           <Tab label="Información" to="/info" component={Link} />
           <Tab label="Reservaciones" to="/reservas" component={Link} />
         </Tabs>

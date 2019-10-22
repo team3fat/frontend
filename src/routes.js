@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 
 const AppRoutes = () => (
     <Switch>
-        <Route exact path="/" component={Inicio} />
+        <Route exact path="/inicio" component={Inicio} />
         <Route exact path="/info" component={Informacion}/>
         <Route exact path="/reservas" component={Reservas}/>
         <Route exact path="/ingreso"  component={Ingreso}/>

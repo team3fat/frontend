@@ -41,7 +41,7 @@ export default class Reservas extends Component {
                     alignItems="center"
                 >
                     <Grid item xs={12}>
-                        <Paper className='paper' square={true} xs={12}>
+                        <Paper className='paper' square={true}>
                             <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
                             <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
                             <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
