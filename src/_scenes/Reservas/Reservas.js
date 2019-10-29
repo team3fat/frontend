@@ -42,9 +42,7 @@ export default class Reservas extends Component {
                 >
                     <Grid item xs={12}>
                         <Paper className='paper' square={true} xs={12}>
-                            <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
-                            <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
-                            <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
+                            <Typography variant="h2" className='header'>Calendario</Typography>
                             {this.renderCaledarioConReservas()}
                             <Typography variant="h3" className='header'>Hace tu reserva aca</Typography>
                             {this.renderCalendario()}
@@ -108,7 +106,7 @@ export default class Reservas extends Component {
             mode: 'cors',
             cache: 'no-cache'
         }
-        fetch("http://127.0.0.1:8000/diquecito/reservation/", config)
+        fetch("http://127.0.0.1:8000/diquecito/reservacion/", config)
             // .then(res => res.json())
             .then(resp => {
                 if (!resp.ok) {
@@ -142,7 +140,7 @@ export default class Reservas extends Component {
     loopeoInicioFin(inicio, final, estado) {
         var index;
         var arrayDiasYEstados = [];
-        var estadosActuales = [];
+        //var estadosActuales = [];
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
             var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index + 1)
             var shapeDelBooking = {
