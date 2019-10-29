@@ -39,16 +39,16 @@ function App() {
                 justify="center"
                 alignItems="center">
             <CssBaseline>
-            <AppBar position="static">
+            <AppBar position="static" className={classes.title}>
                 <Toolbar >
                     <Typography variant="h6" className={classes.title}>
                         Nuevo Complejo Diquecito
                     </Typography>
                 </Toolbar>
-            </AppBar>
+            </AppBar >
             </CssBaseline>
             <BrowserRouter>
-                <div className="main" style={{minHeight: "calc(100vh - 200px) "}}>
+            <div className="main" style={{minHeight: "calc(100vh - 200px) "}}>
                     <section className="main--section">
                         <NavBar />
                         <AppRoutes />

@@ -1,16 +1,10 @@
-//import Calendar from 'react-calendar'
-//import { Calendar } from '@fullcalendar/core';
-//import dayGridPlugin from '@fullcalendar/daygrid';
-// import BookingCalendar from '../../_components/react-booking-calendar/src/BookingCalendar';
-//import FormControl from '@material-ui/core/FormControl';
-//import Button from '@material-ui/core/Button';
-//import Paper from '@material-ui/core/Paper';
 import BookingCalendar from '../../_components/calendario/BookingCalendar';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
 import { Grid, FormControl, Button, Paper, Typography } from '@material-ui/core';
 var moment = require('moment');
 import React, { Component } from 'react';
 import './Reservas.css';
+import Formulario from './Formulario.js';
 
 export default class Reservas extends Component {
 
@@ -50,6 +44,7 @@ export default class Reservas extends Component {
                             {this.renderCalendario()}
                             {this.renderFormControl()}
                         </Paper>
+                        <Formulario />
                     </Grid>
                 </Grid>
             </div>
@@ -83,7 +78,7 @@ export default class Reservas extends Component {
     }
 
     renderFormControl() {
-        return (
+        return (    
             <FormControl method="POST" fullWidth>
                 <Button onClick={() => { this.onSubmit() }} color="primary">Reservar!</Button>
             </FormControl>

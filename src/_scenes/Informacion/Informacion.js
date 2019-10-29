@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import Ubicacion from './Ubicacion.js';
 import Sectores from './Sectores.js';
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
