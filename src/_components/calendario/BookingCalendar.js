@@ -5,6 +5,7 @@ import "moment/locale/es";
 import DayNames from './DayNames';
 import Week from './Week';
 import './BookingCalendar.css';
+moment.locale("es");
 
 export default class BookingCalendar extends Component {
 
@@ -22,7 +23,7 @@ export default class BookingCalendar extends Component {
 
   updatePreviousState() {
     if (this.props.disableHistory) {
-      Moment.locale("es")
+      
       const previousDisabled = this.state.month.isSame(moment(), 'month') && this.state.month.isSame(moment(), 'year');
       this.setState({ previousDisabled });
     }
