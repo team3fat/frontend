@@ -4,6 +4,7 @@ import moment from 'moment';
 import DayNames from './DayNames';
 import Week from './Week';
 import './BookingCalendar.css';
+moment.locale("es");
 
 export default class BookingCalendar extends Component {
 

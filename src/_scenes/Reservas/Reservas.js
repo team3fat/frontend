@@ -7,7 +7,7 @@
 //import Paper from '@material-ui/core/Paper';
 import BookingCalendar from '../../_components/calendario/BookingCalendar';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
-import { Grid, FormControl, Button, Paper, Typography } from '@material-ui/core';
+import { Grid, FormControl, Button, Paper, Typography, InputLabel, Input } from '@material-ui/core';
 var moment = require('moment');
 import React, { Component } from 'react';
 import './Reservas.css';
@@ -33,24 +33,21 @@ export default class Reservas extends Component {
 
     render() {
         return (
-            <div className='mainDiv'>
+            <div>
                 <Grid
                     container
-                    direction="column"
                     justify="center"
-                    alignItems="center"
                 >
-                    <Grid item xs={12}>
-                        <Paper className='paper' square={true}>
+                        <Paper className='paper'>
                             <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
                             <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
                             <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
                             {this.renderCaledarioConReservas()}
                             <Typography variant="h3" className='header'>Hace tu reserva aca</Typography>
                             {this.renderCalendario()}
+                            {this.renderFormCalendario()}
                             {this.renderFormControl()}
                         </Paper>
-                    </Grid>
                 </Grid>
             </div>
         );
@@ -64,6 +61,19 @@ export default class Reservas extends Component {
                         this.state.bookingArray
                     }
                 />
+            </div>
+        );
+    }
+
+    renderFormCalendario(){
+        return (
+            <div>
+                <Paper>
+                    <FormControl fullWidth>
+                        <InputLabel>Email</InputLabel>
+                        <Input required></Input>
+                    </FormControl>
+                </Paper>
             </div>
         );
     }
@@ -142,7 +152,6 @@ export default class Reservas extends Component {
     loopeoInicioFin(inicio, final, estado) {
         var index;
         var arrayDiasYEstados = [];
-        var estadosActuales = [];
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
             var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index + 1)
             var shapeDelBooking = {

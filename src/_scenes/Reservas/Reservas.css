@@ -1,6 +1,7 @@
 .paper{
     text-align: center;
-    margin: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .reservado{
@@ -9,11 +10,6 @@
 
 .pedido{
     color: #ffeb3b;
-}
-
-.mainDiv{
-    align-items: center;
-    align-self: center;
 }
 
 .header{
