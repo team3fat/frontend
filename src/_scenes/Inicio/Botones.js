@@ -1,117 +1,79 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import '../../_assets/css/font.css';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+
+const messageSalon = 'Este es el inicio de nuestra pagina, encentra un poco de como comenzó el complejo y sigue conociendo nuestra si es de tu interez, puedes ver fotos y actividades';
 
 const useStyles = makeStyles(theme => ({
-  button: {
-    marginBottom: theme.spacing(1),
+  root: {
+    flexGrow: 1,
   },
-
-  input: {
-    display: 'none',
+  paper: {
+    padding: theme.spacing(0),
+    textAlign: 'center',
+    marginLeft: "50px",
+    marginRight: "50px",  
+  },
+  title: {
+    padding: theme.spacing(0),
+    textAlign: 'center',
+    minHeight: '35px',
+    minWidth: "280px",
+    marginBottom: "25px",
+    marginTop: "10px",
+    background: '#3949ab',
+  },  
+  img: {
+    display: 'block',
+    maxWidth: '610px',
+    maxHeight: '403px',
+  },
+  card: {
+    Width: "1210px",
+  },
+  end: {
+    minWidth: "1210px",
+    marginBottom: "50px",
   },
 }));
 
 export default function ButtonAppBar() {
   const classes = useStyles()
   return (
-    <div>
-        <Grid container
-          className={classes.button}
-          direction="row"
-          justify="space-between"
-          alignItems="center">
-          {renderFotos()}
-          {renderHistoria()}
-          {renderDetalles()}
-        </Grid>
-    </div>
-  );
-}
-
-function renderFotos() {
-  return (
-    <Grid item xs={4}>
-      <div className="separarbotones">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" /><path d="M0 0h24v24H0z" fill="none" /></svg>
-        <Grid>
-        <Button variant="contained" size="large" color="primary" href="#fotos">
-            Fotos
-          </Button>
-        </Grid>
-        <Grid spacing={2}>
-          {renderDescFotos()}
-        </Grid>
+      <div>
+        <Paper>
+          <Grid container
+            className={classes.button}
+            direction="row"
+            justify="space-between"
+            alignItems="center">
+              <Grid container
+              direction="row"
+              justify="center"
+              alignItems="center">
+                <Grid container
+                direction="row"
+                justify="center"
+                alignItems="center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" /></svg>
+                </Grid>
+                <Paper className={classes.title} square={true}>
+                  <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Historia</h5>
+                </Paper>
+                <Grid container
+                direction="row"
+                justify="center"
+                alignItems="center">
+                  <Typography id="historia" variant="h6" gutterBottom>
+                    {messageSalon}
+                  </Typography>
+                </Grid>
+              </Grid>   
+          </Grid>
+        </Paper>
       </div>
-    </Grid>
   );
-}
-
-function renderDescFotos(){
-  return (
-    <Grid>
-      <Typography gutterBottom variant="subtitle1">
-          Aqui podras ver fotos del complejo
-      </Typography>
-    </Grid>
-  )
-}
-
-function renderHistoria() {
-  return (
-    <Grid item xs={4}>
-      <div className="separarbotones">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" /></svg>
-        <Grid>
-          <Button variant="contained" size="large" color="primary" href="#historia">
-            Historia
-        </Button>
-        </Grid>
-        <Grid spacing={2}>
-          {renderDescHistoria()}
-        </Grid>
-      </div>
-    </Grid>
-  );
-}
-
-function renderDescHistoria(){
-  return (
-    <Grid>
-      <Typography gutterBottom variant="subtitle1">
-          Si deseas saber como inicio todo haz click aqui
-      </Typography>
-    </Grid>
-  )
-}
-
-function renderDetalles() {
-  return (
-    <Grid item xs={4}>
-      <div className="separarbotones">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M3 9h4V5H5c-1.1 0-2 .9-2 2v2zm0 5h4v-4H3v4zm5 0h4v-4H8v4zm5 0h4v-4h-4v4zM8 9h4V5H8v4zm5-4v4h4V5h-4zm5 9h4v-4h-4v4zM5 19h2v-4H3v2c0 1.1.9 2 2 2zm3 0h4v-4H8v4zm5 0h4v-4h-4v4zm5 0h2c1.1 0 2-.9 2-2v-2h-4v4zm0-14v4h4V7c0-1.1-.9-2-2-2h-2z" /></svg>
-        <Grid>
-          <Button variant="contained" size="large" color="primary" href="#detalles">
-            Detalles
-          </Button>
-        </Grid>
-        <Grid spacing={2}>
-          {renderDescDetalles()}
-        </Grid>
-      </div>
-    </Grid>
-  );
-}
-
-function renderDescDetalles(){
-  return (
-    <Grid>
-      <Typography gutterBottom variant="subtitle1">
-          Detalles que ofrece el complejo
-      </Typography>
-    </Grid>
-  )
 }
