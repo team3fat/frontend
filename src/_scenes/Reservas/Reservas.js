@@ -41,8 +41,15 @@ export default class Reservas extends Component {
                     alignItems="center"
                 >
                     <Grid item xs={12}>
+<<<<<<< HEAD
                         <Paper className='paper' square={true} xs={12}>
                             <Typography variant="h2" className='header'>Calendario</Typography>
+=======
+                        <Paper className='paper' square={true}>
+                            <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
+                            <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
+                            <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
+>>>>>>> c1dd0aed9878ec7ac25f84aa0fda384756c9e491
                             {this.renderCaledarioConReservas()}
                             <Typography variant="h3" className='header'>Hace tu reserva aca</Typography>
                             {this.renderCalendario()}
