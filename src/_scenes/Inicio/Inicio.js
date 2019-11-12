@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     margin: "40px",
   },
   paper: {
-    marginInline: "50px",
+    marginInline: "0px",
   },
 }));
 
@@ -22,7 +22,7 @@ export default function FullWidthGrid() {
     <div className={classes.root}>
       <Grid container justify="center" spacing={5}>
         <Grid item xs={8}>
-          <Paper className={classes.paper} square={true}><Botones /></Paper>
+        <Botones />
         </Grid>
       <Grid
         container
