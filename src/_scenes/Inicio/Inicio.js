@@ -8,10 +8,10 @@ import Tarjetas from '../Inicio/Tarjetas.js';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    margin: "40px",
   },
   paper: {
-    marginInline: "0px",
+    marginRight: "40px",
+    marginLeft: "40px",
   },
 }));
 
@@ -20,8 +20,8 @@ export default function FullWidthGrid() {
 
   return (
     <div className={classes.root}>
-      <Grid container justify="center" spacing={5}>
-        <Grid item xs={8}>
+      <Grid container justify="center" spacing={0}>
+        <Grid item xs>
         <Botones />
         </Grid>
       <Grid

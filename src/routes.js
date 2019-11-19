@@ -1,4 +1,3 @@
-import Inicio from './_scenes/Inicio/Inicio';
 import Valores from './_scenes/Valores/Valores';
 import Servicios from './_scenes/Servicios/Servicios';
 import Reservas from './_scenes/Reservas/Reservas';
@@ -12,7 +11,6 @@ import { Route, Switch } from 'react-router-dom';
 
 const AppRoutes = () => (
     <Switch>
-        <Route exact path="/inicio" component={Inicio} />
         <Route exact path="/vision-mision-y-valores" component={Valores} />
         <Route exact path="/servicios" component={Servicios}/>
         <Route exact path="/reservas" component={Reservas}/>
