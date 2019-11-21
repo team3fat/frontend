@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: '35px',
     minWidth: "280px",
     marginBottom: "25px",
-    marginTop: "10px",
+    marginTop: "25px",
     background: '#3949ab',
   },  
   img: {
@@ -46,15 +46,21 @@ export default function informacion() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div>
       <Grid container
-                direction="row"
-                justify="center"
-                alignItems="center">
-        <Paper className={classes.title} square={true}>
-        <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Sectores</h5>
-         </Paper>
-        </Grid>
+      className={classes.button}
+      direction="row"
+      justify="space-between"
+      alignItems="center">
+        <Grid container
+        direction="row"
+        justify="center"
+        alignItems="center">
+          <Paper className={classes.title} square={true}>
+            <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Sectores</h5>
+          </Paper>
+          </Grid>   
+      </Grid>
       <Paper className={classes.paper} square={true}>
         <Grid className={classes.card}container
                 direction="row"

@@ -5,10 +5,6 @@ import Paper from '@material-ui/core/Paper';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-
-const message = `Somos un complejo con valores cristianos, amantes del mundo, y queremos que las demas personas puedan disfrutar de la naturaleza, liberar sus cargas, sus preocupaciones y que puedan relajarse.
-                Esperamos que disfruten su estadia en el Nuevo Complejo Diquecito.`;
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -17,6 +13,12 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     background: '#3949ab',
+  },
+  img: {
+  margin: 'auto',
+  display: 'block',
+  maxWidth: '50%',
+  maxHeight: '20%',
   },
   separar:{
     margin: theme.spacing(2),
@@ -30,12 +32,17 @@ export default function AutoGrid() {
     <div className={classes.root}>
       <Paper className={classes.paper} square={true}>
       <Grid wrap="nowrap" container spacing={1}>
-        <Grid item xs={7}>
-          <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Nuevo Complejo Diquecito</h5>
-          <Typography className="colortext">{message}</Typography>
+        <Grid item xs={4}>
+          <Grid className={classes.img}>
+            <img className={classes.img} src={require("../../_assets/Img/LogoDiq.png")}/>
+          </Grid>
+          </Grid>
+        <Grid item xs={3}>
+          <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Para mas informacion</h5>
+          <Typography className="colortext">3517654321</Typography>
         </Grid>
         <Grid item xs={5}>
-          <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6">Nuestras Redes</h5>
+          <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6">Visita Nuestras Redes</h5>
           <a className={classes.separar} href="https://es-la.facebook.com/diquecito.nuevocomplejo/" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3 7h-1.924c-.615 0-1.076.252-1.076.889v1.111h3l-.238 3h-2.762v8h-3v-8h-2v-3h2v-1.923c0-2.022 1.064-3.077 3.461-3.077h2.539v3z"/></svg>
           </a>

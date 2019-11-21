@@ -48,6 +48,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     minHeight: '35px',
     minWidth: "280px",
+    marginBottom: "25px",
     marginTop: "25px",
     background: '#3949ab',
   },  
