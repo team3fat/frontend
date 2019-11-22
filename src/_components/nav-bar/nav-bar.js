@@ -72,7 +72,7 @@ export default function FullWidthTabs() {
           <Tab label="Vision, mision y valores" to="/vision-mision-y-valores" component={Link} />
           <Tab label="Servicios" to="/servicios" component={Link} />
           <Tab label="¿Donde Queda?" to="/ubicacion" component={Link} />
-          <Tab label="Miranos" to="/servicios" component={Link} />
+          <Tab label="Miranos" to="/miranos" component={Link} />
           <Tab label="Hace tu reserva" to="/reservas" component={Link} />
         </Tabs>
       </AppBar>
