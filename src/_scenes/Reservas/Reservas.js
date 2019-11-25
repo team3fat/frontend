@@ -108,7 +108,7 @@ export default class Reservas extends Component {
             mode: 'cors',
             cache: 'no-cache'
         }
-        fetch("http://127.0.0.1:8000/diquecito/reservation/", config)
+        fetch("http://127.0.0.1:8000/diquecito/reservacion/", config)
             // .then(res => res.json())
             .then(resp => {
                 if (!resp.ok) {
@@ -142,7 +142,7 @@ export default class Reservas extends Component {
     loopeoInicioFin(inicio, final, estado) {
         var index;
         var arrayDiasYEstados = [];
-        var estadosActuales = [];
+        //var estadosActuales = [];
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
             var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index + 1)
             var shapeDelBooking = {
