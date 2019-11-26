@@ -42,7 +42,7 @@ export default function Tarjetas() {
         justify="center"
         alignItems="center">
           <Paper className={classes.title} square={true}>
-            <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Conocenos un poco mas!!</h5>
+            <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Conocenos un poco!!</h5>
           </Paper>
           </Grid>   
       </Grid>
@@ -91,27 +91,42 @@ function TarjetaDetalles() {
         <ListItem>
           <ListItemText inset>
             <Typography variant="h5" gutterBottom>
-                Actividades
+                Actividades que se pueden realizar en el complejo (Caminatas, Juegos, etc.)
             </Typography>
           </ListItemText>
         </ListItem>
         <ListItemText inset>
           <Typography gutterBottom variant="subtitle1">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            Dentro del predio: voley, basquet, futbol, metegol, pileta
+            Fuera del predio: caminata corta a las viejas canteras, caminata al río, caminata por las vías del tren, excursión a una cascada
           </Typography>
         </ListItemText>
         <ListItem>
           <ListItemText inset>
             <Typography variant="h5" gutterBottom>
-                Capacidades
+                Capacidad de cada sector (Cantidad de personas)
             </Typography>
           </ListItemText>
         </ListItem>
         <ListItemText inset>
           <Typography gutterBottom variant="subtitle1">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            Salón de usos múltiples (SUM) como comedor y lugar de reunión y recreación: 120 personas, sector cochera y expansión salón: 
+            50 personas, sector de cocina: 5-8 personas, sector asador: 2-4 personas, sector de habitaciones: 120 personas, sector de canchas: 
+            120 personas, sector de pileta: 80 personas, sector cabañas: 9 personas, sector fogón: 50 personas, sector casa cuidador: 3 personas.          </Typography>
+        </ListItemText>
+
+
+
+        <ListItem>
+          <ListItemText inset>
+            <Typography variant="h5" gutterBottom>
+                Algunos elementos incluye la reserva del complejo
+            </Typography>
+          </ListItemText>
+        </ListItem>
+        <ListItemText inset>
+          <Typography gutterBottom variant="subtitle1">
+            ​Incluye elementos de cocina, vajilla completa, sillas.<h4> ​NO INCLUYE:</h4> Proyector, pantalla, sonido, instrumentos, pelotas, sábanas, toallón y elementos de higiene
           </Typography>
         </ListItemText>
         <ListItem>

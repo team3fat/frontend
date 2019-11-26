@@ -9,15 +9,51 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
+  paper2: {
+    padding: theme.spacing(0),
+    margin: "50px",
+  },
   paper: {
     padding: theme.spacing(0),
     textAlign: 'center',
     marginLeft: "50px",
     marginRight: "50px",  
   },
+  title: {
+    padding: theme.spacing(0),
+    textAlign: 'center',
+    minHeight: '35px',
+    minWidth: "280px",
+    marginTop: "25px",
+    background: '#3949ab',  
+  },  
 }));
 
+export default function Tarjetas() {
+  const classes = useStyles();
 
+  return (
+    <div>
+      <Grid container
+      className={classes.button}
+      direction="row"
+      justify="space-between"
+      alignItems="center">
+        <Grid container
+        direction="row"
+        justify="center"
+        alignItems="center">
+          <Paper className={classes.title} square={true}>
+            <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Puedes ver alguna fotos de nuestro complejo</h5>
+          </Paper>
+          </Grid>   
+      </Grid>
+      <Paper className={classes.paper2} square={true}>
+      {Example()}
+      </Paper>
+    </div>
+  );
+}
 
 
 function Example() {
@@ -56,22 +92,20 @@ function Example() {
     }, [index]);
 
   return (
-          <Paper className={classes.paper} square={true}>
-
-    <div style={{ background: "black", width: "auto", height: "auto" }}>
-      <Gallery
-        index={index}
-        onRequestChange={i => {
+    <Paper className={classes.paper} square={true}>
+      <div style={{ background: "black", width: "auto", height: "auto" }}>
+        <Gallery
+          index={index}
+          onRequestChange={i => {
           setIndex(i);
         }}
-      >
+        >
         {images.map(img => (
-          <GalleryImage objectFit="contain" key={img.src} src={img.src} />
-        ))}
-      </Gallery>
-    </div>
+        <GalleryImage objectFit="contain" key={img.src} src={img.src} />
+          ))}
+        </Gallery>
+      </div>
     </Paper> 
   );
 }
 
-export default Example;
