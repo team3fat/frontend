@@ -62,13 +62,12 @@ export default function FullWidthTabs() {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Inicio" to="/inicio" component={Link} />
+          <Tab label="Detalles del complejo" to="/detalles" component={Link} />
           <Tab label="Vision, mision y valores" to="/vision-mision-y-valores" component={Link} />
-          <Tab label="Detalles" to="/detalles" component={Link} />
           <Tab label="Servicios" to="/servicios" component={Link} />
           <Tab label="¿Donde Queda?" to="/ubicacion" component={Link} />
-          <Tab label="Miranos" to="/servicios" component={Link} />
-          <Tab label="Reservaciones" to="/reservas" component={Link} />
+          <Tab label="Miranos" to="/miranos" component={Link} />
+          <Tab label="Hace tu reserva" to="/reservas" component={Link} />
         </Tabs>
       </AppBar>
     </div>

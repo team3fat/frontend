@@ -3,40 +3,55 @@ import '../../_assets/css/font.css';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import { makeStyles } from '@material-ui/core/styles';
 
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(0),
+    margin: "50px",
+  },
+  title: {
+    padding: theme.spacing(0),
+    textAlign: 'center',
+    minHeight: '35px',
+    minWidth: "280px",
+    marginTop: "25px",
+    background: '#3949ab',  
+  },  
+}));
 export default function Tarjetas() {
+  const classes = useStyles();
+
   return (
     <div>
-      {TarjetaFotos()}
+      <Grid container
+      className={classes.button}
+      direction="row"
+      justify="space-between"
+      alignItems="center">
+        <Grid container
+        direction="row"
+        justify="center"
+        alignItems="center">
+          <Paper className={classes.title} square={true}>
+            <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6" >Conocenos un poco!!</h5>
+          </Paper>
+          </Grid>   
+      </Grid>
+      <Paper className={classes.paper} square={true}>
       {TarjetaHistoria()}
       {TarjetaDetalles()}
+      </Paper>
     </div>
   );
-}
-
-function TarjetaFotos() {
-  return (
-    <div>
-      <List component="nav" aria-label="contacts">
-        <ListItem button>
-          <ListItemIcon>
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-          </ListItemIcon>
-            <Typography id="fotos" variant="h4" gutterBottom>
-              Fotos
-            </Typography>
-        </ListItem>
-        <ListItemText inset>
-          <Typography className="sinmargen" gutterBottom variant="subtitle1">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-          </Typography>
-        </ListItemText>
-      </List>
-    </div>
-  )
 }
 
 function TarjetaHistoria() {
@@ -53,7 +68,7 @@ function TarjetaHistoria() {
         </ListItem>
         <ListItemText inset>
           <Typography gutterBottom variant="subtitle1">
-            En 1945 se realizó el primer campamento en Diquecito, al comienzo se realizaban en carpas hasta que se adquirió la actual propiedad a la que constantemente se le han realizado mejoras y ampliaciones.
+          En 1945 se realizó el primer campamento en Diquecito, al comienzo se realizaban en carpas hasta que se adquirió la actual propiedad a la que constantemente se le han realizado mejoras y ampliaciones. 
           </Typography>
         </ListItemText>
       </List>
@@ -76,64 +91,42 @@ function TarjetaDetalles() {
         <ListItem>
           <ListItemText inset>
             <Typography variant="h5" gutterBottom>
-                Actividades
+                Actividades que se pueden realizar en el complejo (Caminatas, Juegos, etc.)
             </Typography>
           </ListItemText>
         </ListItem>
         <ListItemText inset>
           <Typography gutterBottom variant="subtitle1">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            Dentro del predio: voley, basquet, futbol, metegol, pileta
+            Fuera del predio: caminata corta a las viejas canteras, caminata al río, caminata por las vías del tren, excursión a una cascada
           </Typography>
         </ListItemText>
         <ListItem>
           <ListItemText inset>
             <Typography variant="h5" gutterBottom>
-                Capacidades
+                Capacidad de cada sector (Cantidad de personas)
             </Typography>
           </ListItemText>
         </ListItem>
         <ListItemText inset>
           <Typography gutterBottom variant="subtitle1">
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-          </Typography>
+            Salón de usos múltiples (SUM) como comedor y lugar de reunión y recreación: 120 personas, sector cochera y expansión salón: 
+            50 personas, sector de cocina: 5-8 personas, sector asador: 2-4 personas, sector de habitaciones: 120 personas, sector de canchas: 
+            120 personas, sector de pileta: 80 personas, sector cabañas: 9 personas, sector fogón: 50 personas, sector casa cuidador: 3 personas.          </Typography>
         </ListItemText>
+
+
+
         <ListItem>
           <ListItemText inset>
             <Typography variant="h5" gutterBottom>
-              Normas internas
+                Algunos elementos incluye la reserva del complejo
             </Typography>
           </ListItemText>
         </ListItem>
         <ListItemText inset>
           <Typography gutterBottom variant="subtitle1">
-            Cuidar todas las instalaciones, mantener limpios los baños, las habitaciones, el salón y el predio en general. Entregar el campamento en buenas condiciones, si usan la cocina entregarla en óptimas condiciones, todo secado y guardado en el lugar correspondiente, sacar la basura, si se rompe o extravía algo deberá reponerse. Se deberá cuidar el uso del agua ya que la misma se trae en camiones desde La Calera, por esta razón se deberá acordar horarios de duchas para racionalizar el uso del agua y gas.
-            Cuando esté habilitada la temporada de pileta, deberá haber por lo menos un adulto responsable controlando el buen uso de la misma, no se permite correr alrededor ni ingresar con alimentos, es obligatorio ducharse antes de bañarse para quitar la transpiración y el protector solar, usar cabello recogido y usar ropa de baño adecuada. No se puede usar la piscina entre las 20hs y las 10hs del día siguiente. 
-          </Typography>
-        </ListItemText>
-        <ListItem>
-          <ListItemText inset>
-            <Typography variant="h5" gutterBottom>
-              Código de convivencia
-            </Typography>
-          </ListItemText>
-        </ListItem>
-        <ListItemText inset>
-          <Typography gutterBottom variant="subtitle1">
-            Respetar los horarios de silencio, no se puede usar micrófonos ni sonido entre las 23hs y las 9hs del día siguiente por respeto a los vecinos. No se permite hacer ruidos molestos, ni destruir la naturaleza.
-          </Typography>
-        </ListItemText>
-        <ListItem>
-          <ListItemText inset>
-            <Typography variant="h5" gutterBottom>
-            Requisitos para reservar
-            </Typography>
-          </ListItemText>
-        </ListItem>
-        <ListItemText inset>
-          <Typography gutterBottom variant="subtitle1">
-            Para reservar la fecha se necesita aceptar las normas internas, código de convivencia y  depositar una seña que puede abonarse en cuotas.
+            ​Incluye elementos de cocina, vajilla completa, sillas.<h4> ​NO INCLUYE:</h4> Proyector, pantalla, sonido, instrumentos, pelotas, sábanas, toallón y elementos de higiene
           </Typography>
         </ListItemText>
         <ListItem>
