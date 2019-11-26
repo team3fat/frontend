@@ -11,7 +11,25 @@
 .pedido{
     color: #ffeb3b;
 }
+body{
+    zoom: 75%;
+}
+
 
 .header{
     color: black;
+}
+
+.formReservas{
+    max-height: 50%;
+    align-items: center;
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
+}
+
+.dateRangePicker{
+    margin: 1%;
+    padding: 1%;
+    font-size: large;
 }
