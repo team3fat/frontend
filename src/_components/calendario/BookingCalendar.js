@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import "moment/locale/es";
 import DayNames from './DayNames';
 import Week from './Week';
 import './BookingCalendar.css';
@@ -22,6 +23,7 @@ export default class BookingCalendar extends Component {
 
   updatePreviousState() {
     if (this.props.disableHistory) {
+      
       const previousDisabled = this.state.month.isSame(moment(), 'month') && this.state.month.isSame(moment(), 'year');
       this.setState({ previousDisabled });
     }
