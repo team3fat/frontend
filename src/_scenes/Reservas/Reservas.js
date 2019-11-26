@@ -1,13 +1,13 @@
 //import Calendar from 'react-calendar'
 //import { Calendar } from '@fullcalendar/core';
 //import dayGridPlugin from '@fullcalendar/daygrid';
-// import BookingCalendar from '../../_components/react-booking-calendar/src/BookingCalendar';
+//import BookingCalendar from '../../_components/react-booking-calendar/src/BookingCalendar';
 //import FormControl from '@material-ui/core/FormControl';
 //import Button from '@material-ui/core/Button';
 //import Paper from '@material-ui/core/Paper';
 import BookingCalendar from '../../_components/calendario/BookingCalendar';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker';
-import { Grid, FormControl, Button, Paper, Typography } from '@material-ui/core';
+import { Grid, FormControl, Button, Paper, Typography, GridList, TextField} from '@material-ui/core';
 var moment = require('moment');
 import React, { Component } from 'react';
 import './Reservas.css';
@@ -19,9 +19,16 @@ export default class Reservas extends Component {
         this.state = {
             diasTraidos: [],
             bookingArray: [],
-            estadoActual: null,
-            estadosTraidos: null,
+            estadoActual: undefined,
+            estadosTraidos: undefined,
             diasAReservar: [new Date(), new Date()],
+            nombre: undefined,
+            apellido: undefined,
+            telefono: undefined,
+            mail: undefined,
+            entidad: undefined,
+            cantidadPersonas: undefined,
+            consulta: undefined
         };
     }
 
@@ -33,25 +40,29 @@ export default class Reservas extends Component {
 
     render() {
         return (
-            <div className='mainDiv'>
+            <div>
                 <Grid
                     container
-                    direction="column"
                     justify="center"
-                    alignItems="center"
                 >
-                    <Grid item xs={12}>
-                        <Paper className='paper' square={true}>
-                            <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
-                            <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
-                            <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
+                        <Paper className='paper'>
+                            {this.renderTitulos()}
                             {this.renderCaledarioConReservas()}
                             <Typography variant="h3" className='header'>Hace tu reserva aca</Typography>
                             {this.renderCalendario()}
                             {this.renderFormControl()}
                         </Paper>
-                    </Grid>
                 </Grid>
+            </div>
+        );
+    }
+
+    renderTitulos(){
+        return(
+            <div>
+                <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
+                <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
+                <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
             </div>
         );
     }
@@ -70,7 +81,7 @@ export default class Reservas extends Component {
 
     renderCalendario() {
         return (
-            <div>
+            <div className="dateRangePicker">
                 <DateRangePicker
                     minDate={new Date()}
                     onChange={this.onChange}
@@ -84,22 +95,51 @@ export default class Reservas extends Component {
 
     renderFormControl() {
         return (
-            <FormControl method="POST" fullWidth>
-                <Button onClick={() => { this.onSubmit() }} color="primary">Reservar!</Button>
-            </FormControl>
+            <div className="formReservas">
+                <FormControl method="POST" fullwidth>
+                    <GridList cellHeight={60} cols={2}>
+                        <TextField required id="Txtnombre" varian="outlined" label="Nombre" value={this.state.nombre} onChange={this.setNombre}></TextField>
+                        <TextField required id="Txtapellido" varian="outlined" label="Apellido" value={this.state.apellido} onChange={this.setApellido}></TextField>
+                        <TextField required id="Txttelefono" varian="outlined" label="Telefono" value={this.state.telefono} onChange={this.setTelefono}></TextField>
+                        <TextField required id="Txtemail" varian="outlined" label="Email" value={this.state.mail} onChange={this.setMail}></TextField>
+                        <TextField required id="Txtentidad" varian="outlined" label="Entidad a la cual pertenece" value={this.state.entidad} onChange={this.setEntidad}></TextField>
+                        <TextField required id="Txtpersonas" varian="outlined" label="Cantidad de personas" value={this.state.cantidadPersonas} onChange={this.setPersonas}></TextField>
+                        <TextField required id="TxtCosulta" varian="outlined" label="Consulta que quieras hacer" value={this.state.consulta} onChange={this.setConsulta}></TextField>
+                    </GridList>
+                    <Button onClick={() => { this.onSubmit() }} color="primary">Reservar!</Button>
+                </FormControl>
+            </div>
         );
     }
-    onChange = date => this.setState({ diasAReservar: date })
 
     onSubmit() {
+
+        console.log(this.state)
+
         var comienzo = this.state.diasAReservar[0]
         var final = this.state.diasAReservar[1]
         var estadoActual = "PEDIDO"
+        var nombre = this.state.nombre
+        var apellido = this.state.apellido
+        var telefono = this.state.telefono
+        var mail = this.state.mail
+        var entidad = this.state.entidad
+        var personas = this.state.cantidadPersonas
+        var consulta = this.state.consulta
+
         var objeto = {
             comienzo: this.transformarFecha(comienzo),
             final: this.transformarFecha(final),
-            estadoActual: estadoActual
+            nombre: nombre,
+            apellido: apellido,
+            telefono: telefono,
+            email: mail,
+            entidad: entidad,
+            cant_personas: personas,
+            consulta: consulta,
+            estado: estadoActual,
         }
+
         var config = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -112,9 +152,8 @@ export default class Reservas extends Component {
             // .then(res => res.json())
             .then(resp => {
                 if (!resp.ok) {
-                    console.log("Error!", resp)
+                    alert("Error!")
                 } else {
-                    console.log(resp)
                     window.location.replace("http://localhost:3000/confirmacion")
                 }
             })
@@ -142,7 +181,6 @@ export default class Reservas extends Component {
     loopeoInicioFin(inicio, final, estado) {
         var index;
         var arrayDiasYEstados = [];
-        //var estadosActuales = [];
         for (index = inicio.getDate(); index <= final.getDate(); index++) {
             var dia = new Date(inicio.getFullYear(), inicio.getMonth(), index + 1)
             var shapeDelBooking = {
@@ -161,5 +199,15 @@ export default class Reservas extends Component {
     cancelarDiasReservados() {
         console.log("Me cancelo!")
     }
+
+    onChange = date => this.setState({ diasAReservar: date })
+
+    setNombre = nombre => this.setState({ nombre: nombre.target.value })
+    setApellido = apellido => this.setState({ apellido: apellido.target.value })
+    setTelefono = telefono => this.setState({ telefono: telefono.target.value })
+    setMail = mail => this.setState({ mail: mail.target.value })
+    setEntidad = entidad => this.setState({ entidad: entidad.target.value })
+    setPersonas = personas => this.setState({ cantidadPersonas: personas.target.value })
+    setConsulta = consulta => this.setState({ consulta: consulta.target.value })
 
 }

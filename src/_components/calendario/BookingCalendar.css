@@ -59,7 +59,7 @@
     border-top: none;
   }
   .booking-calendar .week.names .day-box:before {
-    padding-top: 50%;
+    padding-top: 20%;
   }
   .booking-calendar .week.names .day-box .day {
     color: black;
@@ -76,7 +76,7 @@
     border-right: solid 1px #fdf3e3;
     content: '';
     display: block;
-    padding-top: 100%;
+    padding-top: 50%;
   }
   .booking-calendar .week .day-box:first-child .day {
     border-left: solid 1px #fdf3e3;
@@ -98,6 +98,7 @@
     right: 0;
     text-align: center;
     top: 0;
+    padding: 5%;
   }
   .booking-calendar .week .day-box .day.not-clickable {
     cursor: default;
