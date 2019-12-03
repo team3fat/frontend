@@ -157,10 +157,14 @@
     font-weight: bold;
   }
   .booking-calendar .week .day-box .day.reservado{
-    background-image: url('../../_assets/Img/moon.svg');
+    background: #e57373;
+    background-image: url('../../_assets/Img/tent.svg');
+    background-position: center;
   }
   .booking-calendar .week .day-box .day.pedido{
-    background-image: url('../../_assets/Img/sun.svg');
+    background: #ffeb3b;
+    background-image: url('../../_assets/Img/bonfire.svg');
+    background-position: center;
   }
   @media (min-width: 600px) {
     .booking-calendar {

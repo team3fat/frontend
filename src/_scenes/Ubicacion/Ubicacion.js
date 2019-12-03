@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-const messageSalon = 'Este es el inicio de nuestra pagina, encentra un poco de como comenzó el complejo y sigue conociendo nuestra si es de tu interez, puedes ver fotos y actividades';
+//const messageSalon = 'Este es el inicio de nuestra pagina, encentra un poco de como comenzó el complejo y sigue conociendo nuestra si es de tu interez, puedes ver fotos y actividades';
 
 const message1 = `El Complejo se encuentra en Diquecito, pasando La Calera yendo desde Córdoba, el mismo tiene un ingreso desde la ruta, donde viniendo desde Córdoba, se tiene que pasar La Calera en dirección hacia El Dique San Roque, en esa dirección se puede encontrar la entrada al kilómetro 13,5 del lado izquierdo, antes de ver la entrada al Complejo, habrá una bajada donde se puede visualizar el pequeño dique al lado derecho acompañado de un puente metálico, al lado de la entrada también se puede ver una casilla blanca para esperar colectivos. Si se quiere ingresar al complejo del lado del dique San Roque es en la entrada siguiente a la Clínica Diquecito del lado derecho después de la casilla blanca. Luego de entrar por el camino, el Complejo estará a la mano derecha donde por la entrada se podrán ver las canchas, salón y la rampa de entrada.`;
 

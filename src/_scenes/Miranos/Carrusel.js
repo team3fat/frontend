@@ -20,12 +20,12 @@ const useStyles = makeStyles(theme => ({
     marginRight: "50px",  
   },
   title: {
-    padding: theme.spacing(0),
+    padding: theme.spacing(1),
     textAlign: 'center',
     minHeight: '35px',
     minWidth: "280px",
     marginTop: "25px",
-    background: '#3949ab',  
+    background: '#3949ab',
   },  
 }));
 

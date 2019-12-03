@@ -38,7 +38,7 @@ export default function AutoGrid() {
       <Grid wrap="nowrap" container spacing={1}>
         <Grid item xs={4}>
           <Grid className={classes.img}>
-            <img className={classes.img} src={require("../../_assets/Img/LogoDique.png")}/>
+            <img className={classes.img} alt="" src={require("../../_assets/Img/LogoDique.png")}/>
           </Grid>
           </Grid>
         <Grid item xs={3}>
@@ -48,10 +48,10 @@ export default function AutoGrid() {
         <Grid item xs={5}>
           <h5 className="colortext MuiTypography-root makeStyles-title-3 MuiTypography-h6">Visita Nuestras Redes</h5>
           <a className={classes.separar} href="https://es-la.facebook.com/diquecito.nuevocomplejo/" target="_blank">
-            <img className={classes.imgredes} src={require("../../_assets/Img/LogoFb.png")}/>
+            <img className={classes.imgredes} alt="" src={require("../../_assets/Img/LogoFb.png")}/>
           </a>
           <a className={classes.separar} href="https://www.instagram.com/explore/locations/1001217278/nuevo-complejo-diquecito" target="_blank">
-            <img className={classes.imgredes} src={require("../../_assets/Img/LogoIg.png")}/>
+            <img className={classes.imgredes} alt="" src={require("../../_assets/Img/LogoIg.png")}/>
           </a>
         </Grid>
       </Grid>
