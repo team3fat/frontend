@@ -15,6 +15,10 @@ body{
     zoom: 75%;
 }
 
+.imgPresentacionTexto{
+    max-width: 3%;
+    max-height: 3%;
+}
 
 .header{
     color: black;

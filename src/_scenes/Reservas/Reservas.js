@@ -60,9 +60,9 @@ export default class Reservas extends Component {
     renderTitulos(){
         return(
             <div>
-                <Typography variant="h3" className='header'>Estos son los dias ya reservados</Typography>
-                <Typography variant="h4" className='reservado'>Este color tendran los dias reservados</Typography>
-                <Typography variant="h4" className='pedido'>Este color tendran los dias pedidos</Typography>
+                <Typography variant="h2" className='header'>Estos son los dias ya reservados</Typography>
+                <Typography variant="h3" className='reservado'>Este color y esta imagen <img className="imgPresentacionTexto" alt="" src={require("../../_assets/Img/tent.svg")}/> son los dias reservados</Typography>
+                <Typography variant="h3" className='pedido'>Este color y esta imagen <img className="imgPresentacionTexto" alt="" src={require("../../_assets/Img/bonfire.svg")}/> son los dias pedidos</Typography>
             </div>
         );
     }
