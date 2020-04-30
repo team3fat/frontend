@@ -13,7 +13,7 @@
     "@wojtekmaj/react-daterange-picker": "^2.4.0",
     "font-awesome": "^4.7.0",
     "font-awesome-icons": "^1.6.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "material-ui": "^0.20.2",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
